@@ -25,23 +25,46 @@ class EssentialOil extends React.Component{
         ["18.", "Rosemary Oil", "Rosmarinus officinalis", "Fresh, herbaceous, sweet, slightly medicinal"],
         ["19.", "Tulsi Oil", "Ocimum tenuiflorum", "Warm woody with a hint of camphor"],
         ["20.", "Vetiver Oil", "Chrysopogon zizanioides", "Earthy, smoky aroma with a hint of fresh rain"]],
-        head : ["S No.", "PRODUCT NAME","BOTANICAL NAME","AROMA PROFILE"]
+        head : ["S.No.", "Product Name", "Botanical Name", "Applications"],
+        productList:[
+            {
+                content: 'Standardized Herbal Extracts',
+                link: '/essential-oil'
+            },
+            {
+                content: 'Cosmeceutical Ingredients',
+                link: '/cosmoceutical-herbal-products'
+            },
+            {
+                content: 'Aqueous Herbal Extracts',
+                link: '/standardized-herbal-extracts'
+            },
+            {
+                content: "Oleoresine's",
+                link: '/oleoresines'
+            },
+            {
+                content: 'Essential Oils and Oleoresins',
+                link: '/oleoresines'
+            }
+        ]
     }
 
     render(){
         return (
             <div>
                 <div className='product-tablename-container'>
-                    <NavLink to='/essential-oil' activeClassName='active'><div className='button'>Essential Oil</div></NavLink>
+                    <NavLink to='/essential-oil' activeClassName='active' className='abc'><div className='button'>Essential Oil</div></NavLink>
                     <NavLink to='/cosmoceutical-herbal-products' activeClassName='active'><div className='button'>Cosmoceutical Herbal Products</div></NavLink>
                     <NavLink to='/standardized-herbal-extracts' activeClassName='active'><div className='button'>Standardized Herbal Extracts</div></NavLink>
                     <NavLink to='/phytochemical' activeClassName='active'><div className='button'>Phytochemical</div></NavLink>
                     <NavLink to='/oleoresines' activeClassName='active'><div className='button'>Oleoresines</div></NavLink>
                 </div>
                 <div className='product-heading-container'>
-                    <div><h1>Essential Oils and Oleoresins</h1></div>
+                    <div><h2>Essential Oils</h2></div>
                     <NavLink to='/contact-form' style={{color:'white'}}><div className='product-inquiry'>Product Inquiry</div></NavLink>
                 </div>
+            
                 <br />
                 <TableCreator head={this.state.head} rows={this.state.data}/>
             </div>

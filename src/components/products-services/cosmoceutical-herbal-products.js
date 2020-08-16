@@ -24,7 +24,7 @@ class Cosmoceutical extends React.Component{
             ["15.", "Tulsi extract powder", "Ocimum sanctum", "Tannin NLT 10%", "Gravimetric", "Skin care to avoid acne and pimples"],
             ["16.", "Tulsi liquid extract", "Ocimum sanctum", "Tannin NLT 0.5%", "Gravimetric", "Skin care to avoid acne and pimples"],
             ["17.", "White Curcumin", "Curcuma longa", "Tetrahydrocurcuminoids NLT 95%", "HPLC", "Skin whitener, antioxidant"]],
-        head : ["S. No", "Product Name", "Botanical Name", "Bio -Markers and Limits", "Testing Method", "Major Application"]
+        head : ["S.No.", "Product Name", "Botanical Name", "Bio - Markers and Limits", "Testing Method", "Major Application"]
     }
 
     render(){
@@ -38,7 +38,7 @@ class Cosmoceutical extends React.Component{
                     <NavLink to='/oleoresines' activeClassName='active'><div className='button'>Oleoresines</div></NavLink>
                 </div>
                 <div className='product-heading-container'>
-                    <div><h1>Cosmoceutical Herbal Products</h1></div>
+                    <div><h2>Cosmoceutical Herbal Products</h2></div>
                     <NavLink to='/contact-form' style={{color:'white'}}><div className='product-inquiry'>Product Inquiry</div></NavLink>
                 </div>
                 <br />

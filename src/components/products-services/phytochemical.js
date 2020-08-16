@@ -12,7 +12,7 @@ class Phytochemical extends React.Component{
             ["4", "Piperine", "Piper nigrum", "Piperine NLT 95%", "HPLC", "Treats gastrointestinal disorders, Intermittent fever"],
             ["5", "Steviosides", "Stevia rebaudiana", "Stevioside NLT 90%", "HPLC", "Healthy natural sweetener"],
             ["6", "AKBA", "Boswellia serrata", "AKBA NLT 40%", "HPLC", "Antirheumatic, anti-inflammatory"]],
-        head : ["S. No", "Product Name", "Botanical Name", "Bio -Markers and Limits", "Testing Method", "Major Application"]
+        head : ["S.No.", "Product Name", "Botanical Name", "Bio - Markers and Limits", "Testing Method", "Major Application"]
     }
 
     render(){
@@ -26,7 +26,7 @@ class Phytochemical extends React.Component{
                     <NavLink to='/oleoresines' activeClassName='active'><div className='button'>Oleoresines</div></NavLink>
                 </div>
                 <div className='product-heading-container'>
-                    <div><h1>Phytochemical's</h1></div>
+                    <div><h2>Phytochemical's</h2></div>
                     <NavLink to='/contact-form' style={{color:'white'}}><div className='product-inquiry'>Product Inquiry</div></NavLink>
                 </div>
                 <br />

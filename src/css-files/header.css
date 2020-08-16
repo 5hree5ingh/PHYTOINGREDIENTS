@@ -5,6 +5,20 @@
 body {
     overflow-x: hidden;
 }
+.upper-header{
+    display:flex;
+    height: 35px;
+    background-color:#568c11;
+}
+.header-menu-list-container{
+    width:70%;
+    display:flex;
+    font-weight: 600;
+    justify-content: flex-end;
+}
+.logo-container{
+    width:20%;
+}
 .menu-list-item a{
     color:black;
     padding:2px;
@@ -12,14 +26,14 @@ body {
 .menu-list-item a:hover{
     font-weight: bold;
     border-radius: 10%;
-    color:green;
+    color:#568c11;
 }
 .dropbtn {
     background: white;
     color: black;
     padding: 20px 20px 20px 0;
-    font-size: 14px;
-    font-weight: 100;
+    font-size: .9em;
+    font-weight: 600;
     border: none;
     text-align: left
   }
@@ -49,3 +63,115 @@ body {
   
   .dropdown:hover .dropdown-content {display: block;}
 
+.heading-options{
+    display:none;
+}
+
+.product-dev-container{
+    text-align: start;
+    margin: 20px;
+}
+#menu-image{
+    display:none;
+}
+.menu-dropdown{
+    display: none;
+}
+.logo-container img{
+    width:100%;
+    height:65px;
+    margin-top:5px;
+}
+.header-main-div{
+    position: fixed;
+z-index: 1;
+width: 100%;
+top: 0;
+background: white;
+}
+.header-2{
+    height: 110px;
+}
+@media only screen and (max-width:750px) {
+    .upper-header{
+        display:none;
+    }
+    .header-main-div{
+        height:100px;
+    }
+    .header-2{
+        height: 100px;
+    }
+    .lower-header{
+        position: relative;
+        height:100%;
+        flex-wrap:wrap;
+        z-index: 1;
+        background:white;
+        width:100vw;
+    }
+    .logo-container img {
+        width:75%;
+    }
+    .menu-dropdown{
+        display: block;
+        height:auto;
+        width: 200px;
+        border: 1px solid black;
+        background-color: whitesmoke;
+        position: relative;
+        margin-top:3px;
+        z-index: 1;
+    }
+    .header-menu-list-container{
+        width:10%;
+        height:40px;
+        border: 1px solid black;
+        position: absolute;
+        left:0;
+        top:100%;
+        padding:3px;
+        overflow: hidden;
+        display: inline-block;
+        background:white;
+    }
+    .menu-list-item{
+        display: none;
+    }
+    .dropdown{
+        display: none;
+    }
+    .logo-container{
+        width:100%;
+        height:100%;
+        padding:5px;
+        border: 1px solid rgb(235, 232, 232)
+    }
+    .meobile-menu-container{
+        height:60px;
+        border: 1px solid blue;
+    }
+    #menu-image{
+        display: block;
+        width:100%;
+        height:100%;
+        position: relative;
+        top:0;
+        left:0;
+        padding:5px;
+    }
+    .header-menu-list-container:hover{
+        overflow: visible;
+    }
+
+    .menu-dropdown a {
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .menu-dropdown a:hover {background-color: green; color: white}
+  
+}

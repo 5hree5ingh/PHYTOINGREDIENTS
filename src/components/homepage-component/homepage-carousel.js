@@ -4,6 +4,7 @@ class HomepageCarosusel extends React.Component{
     render(){
         return(
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <img src="/images/mobile-fresh.jpg" alt="mobile-fresh" className="mobile-homepage"/>
             <div class="carousel-inner">
                 <div class="carousel-item active container-slider">
                     <img src="images/s1.jpg" alt="First slide" height="100%"></img>

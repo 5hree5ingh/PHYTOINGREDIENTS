@@ -12,15 +12,15 @@ class EventComponent extends React.Component{
     }
     render(){
         return(
-            <div className="event-component-container d-flex">
+            <div className="event-component-container-project d-flex">
                 <div className="event-image-container">
                     <img src={this.state.event_image} alt="event"></img>
                 </div>
                 <div className="event-summary-container" >
                     <div className="evnet-heading-container">
-                        <h5 style={{fontSize:"15px",marginTop:"5px", color:"black"}}>{this.state.event_name}</h5>
+                        <strong style={{fontSize:"15px",marginTop:"5px", color:"black"}}>{this.state.event_name}</strong>
                     </div>
-                    <div className="event-discription-container">
+                    <div className="event-discription-container" style={{textAlign:'justify', marginTop: '5px'}}>
                         <p style={{fontSize:"13px", color:"black"}}>{this.state.event_summary}</p>
                     </div>
                 </div>

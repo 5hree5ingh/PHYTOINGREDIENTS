@@ -1,10 +1,10 @@
 
   .product-heading-container {
-    background: rgb(0, 0, 0); /* Fallback color */
-    background: rgba(0, 0, 0, 0.8); /* Black background with 0.5 opacity */
+    background: #568c11; /* Fallback color */
+    background-image: url('./hbg1.jpg');
     color: #f1f1f1;
     width: 100%;
-    padding: 20px;
+    padding: 15px 68px;
     text-align: start;
     display: flex;
     justify-content: space-between;
@@ -19,8 +19,8 @@
 
 .product-inquiry:hover{
   background: rgb(66, 153, 66);
-  border: 4px solid;
-  font-weight: bold;
+  border: 2px solid black;
+  
 }
 .map {
   height: 300px;
@@ -32,14 +32,34 @@
   }
 
   .active{
-    background: rgb(66, 153, 66);
+    background: #568c11;
     color: white;
     border-radius: 10px;
     font-weight: bolder;
   }
 
   .product-tablename-container{
+    background: #f1f1f1;
     display : flex;
     justify-content: space-around;
     margin: 10px 0 10px 0;  
+  }
+ 
+
+  @media only screen and (max-width:750px) {
+    .product-tablename-container{
+      display: none;
+    }
+    .popular-product-img{
+      width: 100%
+    }
+    .product-heading-container div h2 {
+      font-size: 25px;
+      margin-top: 13px;
+    }
+    .product-heading-container{
+      justify-content: space-evenly;
+      padding: 20px
+    }
+    
   }

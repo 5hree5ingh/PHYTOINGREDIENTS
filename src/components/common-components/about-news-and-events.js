@@ -64,14 +64,6 @@ class NewsAndEventsComponent extends React.Component{
                 <p className="common-para">All the above data are finally used to prepare the following:</p>
                 <p className="common-para">An overall budget for project execution The entire facility layout for the preliminary stage as per national and international regulatory norms</p>
                 <UnorderList listItem={this.state.stage_third} />
-                <div className="social-media-icons">
-                    <div className="media-icon">
-                        <a href="/jjj"><img src="./images/fb.png" alt="icon"/></a>
-                    </div>
-                    <div className="media-icon"></div>
-                    <div className="media-icon"></div>
-                    <div className="media-icon"></div>
-                </div>
                 
             </div>
         )

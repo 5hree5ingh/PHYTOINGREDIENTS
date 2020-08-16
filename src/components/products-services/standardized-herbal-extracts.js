@@ -72,7 +72,7 @@ class Standardized extends React.Component{
             ["63.", "White kidney beans extract", "Phaseolus vulgaris", "Amylase Inhibitory activity 2000, 10,000-20,000 unit/gm", "Gravimetric", "Weight management"],
             ["64.", "Valeriana ext", "Valeriana wallichii", "Valerianic acids o.8%", "HPLC", "Calms nervous system, used in insomnia"],
             ["65.", "Nano-Curcumin", "Curcuma longa particle size 20-100 NMT", "Curcuminoid NLT 40%", "HPLC", "Antioxidant, anti-inflammatory, anti cancer"]],
-        head : ["S. No", "Product Name", "Botanical Name", "Bio -Markers and Limits", "Testing Method", "Major Application"]
+        head : ["S.No.", "Product Name", "Botanical Name", "Bio - Markers and Limits", "Testing Method", "Major Application"]
     }
 
     render(){
@@ -86,7 +86,7 @@ class Standardized extends React.Component{
                     <NavLink to='/oleoresines' activeClassName='active'><div className='button'>Oleoresines</div></NavLink>
                 </div>
                 <div className='product-heading-container'>
-                    <div><h1>Standardized Herbal Extracts</h1></div>
+                    <div><h2>Standardized Herbal Extracts</h2></div>
                     <NavLink to='/contact-form' style={{color:'white'}}><div className='product-inquiry'>Product Inquiry</div></NavLink>
                 </div>
                 <br />

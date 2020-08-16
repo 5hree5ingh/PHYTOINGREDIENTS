@@ -12,7 +12,7 @@ class Oleoresines extends React.Component{
             ["5.", "Fenugreek", "Trigonella foenum-graecum", "Food Industry, Laxative, Digestive support"],
             ["6.", "Ginger", "Zingiber Officinalis", "Flavoring agent"],
             ["7.", "Turmeric", "Curcuma longa", "Coloring and Flavoring agent, Cosmetics"]],
-        head : ["S No.", "Product Name", "Botanical Name", "Applications"]
+        head : ["S.No.", "Product Name", "Botanical Name", "Applications"]
     }
 
     render(){
@@ -26,7 +26,7 @@ class Oleoresines extends React.Component{
                     <NavLink to='/oleoresines' activeClassName='active'><div className='button'>Oleoresines</div></NavLink>
                 </div>
                 <div className='product-heading-container'>
-                    <div><h1>Oleoresines's</h1></div>
+                    <div><h2>Oleoresines's</h2></div>
                     <NavLink to='/contact-form' style={{color:'white'}}><div className='product-inquiry'>Product Inquiry</div></NavLink>
                 </div>
                 <br />

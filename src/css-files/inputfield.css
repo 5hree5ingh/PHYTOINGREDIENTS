@@ -1,0 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+.input-field-container{
+    width:45%;
+    height:55px;
+    padding:10px 
+}

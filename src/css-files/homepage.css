@@ -30,15 +30,18 @@ body{
 	position: relative;
 	left:-20px;
 }
+.mobile-homepage{
+    display: none;
+}
 .about-service-container{
     width:100%;
-    height:50vh;
+    height:35vh;
 }
 .service-heading{
     width: 40%;
     position: relative;
     left:30%;
-    height:40%;
+    height:27%;
     color:grey;
     padding-top: 10px;
     margin-top: 10px;
@@ -53,20 +56,6 @@ body{
     position: absolute;
     left:45%;
     top:40%;
-}
-.line-container_1{
-    width:45%;
-    position: absolute;
-    left:0;
-    top:48%;
-    border:0.5px solid green;
-}
-.line-container_2{
-    width:45%;
-    position: absolute;
-    right:0;
-    top:48%;
-    border:0.5px solid green;
 }
 .star{
     width:20%;
@@ -90,7 +79,7 @@ body{
 }
 .product-and-service-container{
     width:100%;
-    height:150vh;
+    height:125vh;
     background: whitesmoke;
     flex-wrap: wrap;
     position: relative;
@@ -106,7 +95,7 @@ body{
     overflow: hidden;
 }
 .feature-type{
-	height:30%;
+	height:300px;
 	width:32%;
     padding: 5px 30px 5px 35px;
     margin:5px;
@@ -147,7 +136,7 @@ body{
     width: 40%;
     position: relative;
     left:30%;
-    height:20%;
+    height:80px;
     padding-top: 10px;
 }
 .container-heading h4{
@@ -159,20 +148,20 @@ body{
     height:20px;
     position: absolute;
     left:45%;
-    top:40%;
+    top:43%;
 }
 .line-container_1{
     width:25%;
     position: absolute;
     left:21%;
-    top:49%;
+    top:55%;
     border:0.5px solid green;
 }
 .line-container_2{
     width:25%;
     position: absolute;
     right:22%;
-    top:49%;
+    top:55%;
     border:0.5px solid green;
 }
 .feature-type .card .card-image img{
@@ -203,19 +192,14 @@ body{
   }
 .testimonials-container{
     width:20%;
-    height:250px;
+    height:45vh;
     margin:25px;
     position: relative;
     overflow: hidden;
     background-color:white;
     box-shadow: 3px 3px 10px 5px grey;
 }
-.testimonials-bg-image{
-    width:100%;
-    height:100%;
-    position: absolute;
-}
-.testimonials-bg-image img{
+.test-bg img{
     width:100%;
     height:100%;
 }
@@ -251,6 +235,7 @@ body{
 .testimonilas-image img {
     height:100%;
     width:100%;
+    display: block;
     overflow: hidden;
 }
 .message-container{
@@ -293,7 +278,7 @@ body{
 *  Research and Event file css
 */
 
-.research-and-events-container{
+.research-and-event-container{
     width:100vw;
     height:80vh;
 }
@@ -311,7 +296,6 @@ body{
     width:50%;
     height:100%;
     padding:5px 5% 5px 5%;
-    overflow-y: scroll;
     position: relative;
 }
 .event-component-container{
@@ -320,10 +304,24 @@ body{
     border: 1px solid whitesmoke;
     box-shadow: 2px 2px 2px 2px whitesmoke;
     margin-right:10px;
+    margin-bottom: 5px;
+}
+.event-component-container-project{
+    width:100%;
+    height: 112px;
+    border: 1px solid whitesmoke;
+    box-shadow: 2px 2px 2px 2px whitesmoke;
+    margin-right:10px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.event-component-container-project:hover{
+    background: #cccccc;
 }
 .event-image-container{
     width:30%;
     height:100%;
+    position: relative;
 }
 .event-image-container img{
     height:100%;
@@ -334,6 +332,10 @@ body{
     height:100%;
     padding: 1% 5% 1% 5%;
 }
+.event-discription-container{
+    height:30%;
+    text-align: justify;
+}
 .popular-event-component-container{
     width:48%;
     height: 48%;
@@ -343,17 +345,22 @@ body{
     flex-wrap: wrap;
 }
 .news-event-update-container{
-    height:70vh;
+    height:65vh;
+    background: whitesmoke;
 }
 .news-content-container{
     height:72%;
     padding-left:2%;
+    max-width: 100%;
+    overflow-x: auto;
+
 }
 .news-content-container .card {
-    height: 100%;   
+    height: 100%;
+    min-width: 260px;  
 }
 .news-content-container .card .card-img-top {
-    height:50%;
+    height:70%;
 }
 .popular-products{
     height:80vh;
@@ -389,16 +396,226 @@ body{
     width: 100%;
     padding: 20px;
   }
-
-  .btn {
-    background-color: lightgreen;
-    border: none;
-    color: white;
-    padding-top: 40px;
-    cursor: pointer;
-  }
-  
   /* Darker background on mouse-over */
   .btn:hover {
-    background-color: green;
+    background-color: #196E3E;
+  }
+  .mobile-testimonials-container{
+    display: none;
+}
+.testimonials-content-container{
+    display: flex;
+    padding:3%;
+  }
+  .testimonials-outer-container{
+    height:80vh;
+    position:relative
+  }
+  .test-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+  }
+  .test-bg img{
+      display: block;
+    width:100%;
+    height:100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+      body{
+          overflow-x: hidden;
+      }
+      .carousel-inner{
+          display: none;
+      }
+      .carousel{
+          width:100vw;
+          height: 50vh;
+      }
+      .carousel img{
+          width:100%;
+          height:100%;
+      }
+      .about-service-container{
+        width:100%;
+        height:auto;
+    }
+    .star-container{
+        width:10%;
+        height:20px;
+        position: absolute;
+        left:45%;
+        top:38px;
+    }
+    .line-container_1{
+        width:35%;
+        position: absolute;
+        left:40px;
+        top:48px;
+    }
+    .line-container_2{
+        width:35%;
+        position: absolute;
+        right:40px;
+        top:48px;
+    }
+    .star{
+        width:20%;
+        height:65%;
+        margin:10%;
+        border-radius:45%;
+    }
+      .service-heading{
+          width:100%;
+          text-align: center;
+          position: relative;
+          left:2%;
+          height:40%;
+          color:grey;
+          padding-top: 10px;
+          margin-top: 10px;
+      }
+      .service-para-container{
+        width:100%;
+        height:10%;
+        padding-left:2%;
+        padding-right:2%;
+        margin-top:20px;
+    }
+    .service-para{
+        height:auto;
+        width:100%;
+        font-size: 14px;
+        color:rgb(75, 74, 74) ;
+        font-weight: 100;  
+        text-align: justify;
+        letter-spacing: 0.8px;
+        word-spacing: 2px;
+    }
+    .mobile-homepage{
+        display: block;
+    }
+    .container-heading{
+        width: 100%;
+        position: relative;
+        left:2%;
+        height:50px;
+        padding-top: 10px;
+    }
+    .feature-type{
+        width:98%;
+        height:14%;
+        float: none;
+        margin-bottom: 10px;
+        padding:15px 20px 15px 10px;
+    }
+    .feature-type .card{
+        height:300px;
+        overflow: visible;
+        margin-top:0;
+    }
+    .feature-type .card .card-image{
+        overflow: visible;
+        width:100%;
+        height:80%;
+        margin-top:0;
+        box-shadow: 3px 3px 10px 5px grey;
+    }
+    .feature-type .card .card-body{
+        width:100%;
+        height:20%;
+    }
+    .card-title{
+        width: 100%;
+        height:30%;
+    }
+
+    .product-and-service-container{
+        height:auto;
+        overflow: visible;
+    }
+    /* .product-container{
+        height:auto;
+        overflow: visible;
+        display: block;
+    } */
+    /*
+        * research and project css
+    */
+
+    .research-and-event-container{
+        height:auto;
+        border: 1px solid red;
+        position: relative;
+    }
+    .research-and-event-inner-container{
+        flex-wrap: wrap;
+        width:100%;
+        height:auto;
+        display: block;
+        position: relative;
+    }
+    .research-container{
+        width:100%;
+        height: auto;
+    }
+    .event-container{
+        width:100%;
+        height:auto;
+    }
+    .event-component-container{
+        width:100%;
+        height: 150px;
+        margin-bottom:10px;
+    }
+    .event-component-container-project{
+        width:100%;
+        height: 150px;
+        margin-bottom:10px;
+    }
+
+    /**
+     `* testimonials css
+    */
+    .testimonials-outer-container{
+        height:80vh;
+        width:100%;
+        display: block;
+        position: relative;
+        padding:3% 5% 3% 3%;
+    }
+    .testimonials-content-container{
+      display: none;
+    }
+    .testimonials-container{
+       display: none;
+    }
+    .event-image-container{
+        height:50%;
+        margin-top: 25px;
+    }
+    .mobile-testimonials-container{
+        display: block;
+        height:auto;
+        width:100%;
+        background: white;
+        position: relative;
+        top:20px;
+    }
+    .mobile-testimonials-content{
+        height:15vh;
+        border: 1px solid green;
+        width:100%;
+        padding:7px;
+    }
+    .test-bg{
+        display: none;
+    }
+    .news-event-update-container{
+        position: relative;
+    }
+    .our-research-img{
+        margin-top: 25px;
+    }
   }
