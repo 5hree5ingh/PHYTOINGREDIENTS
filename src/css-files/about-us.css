@@ -1,0 +1,58 @@
+.about-us-container{
+    padding:1% 3% 3% 3%;
+    height:110vh;
+    background: whitesmoke
+}
+.about-us-heading{
+    margin: 10px 0 20px 0;
+}
+.about-us-para{
+    width:100%;
+    font-size: 14px;
+    text-align: justify;
+}
+.buisness-develeopement-container{
+    padding: 1% 3% 3% 3%;
+    height: 60vh;
+    background: whitesmoke
+}
+.buisness-dev-heading{
+    margin: 10px 0 20px 0;
+}
+.buisness-dev-para{
+    width:100%;
+    font-size: 14px;
+    text-align: justify;
+}
+.buisness-dev-list{
+    width:30%;
+    position: relative;
+    left:10%;
+}
+.buisness-dev-list-item{
+    text-align: left;
+    font-size: 14px;
+}
+.about-news-and-events{
+    padding: 1% 3% 3% 3%;
+    height: auto;
+    background: whitesmoke
+}
+.news-events-heading{
+    margin: 10px 0 20px 0;
+    text-align: left;
+}
+.common-para{
+    width:100%;
+    font-size: 14px;
+    text-align: justify;
+}
+.common-unorder-list{
+    width:30%;
+    position: relative;
+    left:0;
+}
+.common-unorder-list-item{
+    text-align: left;
+    font-size: 14px;
+}
