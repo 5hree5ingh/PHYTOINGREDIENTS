@@ -28,12 +28,13 @@ class Footer extends React.Component{
                         <div style={{display:'flex'}}><i class="fa fa-address-card" aria-hidden="true" style={{marginTop:'2px'}}></i><div  style={{marginLeft:'5px'}}> Gali no.1, Uttam colony, </div></div>
                             <div style={{marginLeft:'20px'}}>Near post office, Jhajjar road,</div>
                             <div style={{marginLeft:'20px'}}>Bahadurgarh, Haryana, India-124507</div>
+                        <div style={{display:'flex'}}><i class="fa fa-address-card" aria-hidden="true" style={{marginTop:'2px'}}></i><div  style={{marginLeft:'5px'}}>Sonipat Khorkhoda Road, VPO Asoudha Todran, </div></div>
+                            <div style={{marginLeft:'20px'}}>Tehsil Bahadurgarh, Jhajjar, Haryana, 124505</div>
                             <div style={{display:'flex'}}><i class="fa fa-user" aria-hidden="true"  style={{marginTop:'2px'}}></i> <div  style={{marginLeft:'10px'}}> Ashish Singh (+91-8840804180)</div></div>
                             {/* <div><i class="fa fa-phone-square" aria-hidden="true"></i> +91-8840804180</div> */}
                             <div style={{display:'flex'}}><i class="fa fa-user" aria-hidden="true"  style={{marginTop:'2px'}}></i> <div  style={{marginLeft:'10px'}}> Vipul Upadhayay (+91-8130000846)</div></div>
                             {/* <div><i class="fa fa-phone-square" aria-hidden="true"></i> +91-8130000846</div> */}
-                            <div><i class="fa fa-envelope" aria-hidden="true"></i> info@phytoingredients.com,
-                             <div style={{marginLeft:'20px'}}>phytoingredients@gmail.com</div></div>
+                            <div><i class="fa fa-envelope" aria-hidden="true"></i>  phytoingredients@gmail.com</div>
                         </div>
                     </div>
                 </div>
