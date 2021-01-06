@@ -92,17 +92,17 @@ class Contactus extends React.Component {
                         <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Factory address : </strong>Khasra No. 3030/718, 3021/718,<br></br>Sonipat Khorkhoda Road, VPO Asoudha Todran,<br></br>Tehsil Bahadurgarh, Jhajjar, Haryana, 124505</li>
                     </ul>
                             <ul style={{listStyle:"none", padding:"0"}}>
-                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-male"></i> <strong style={{fontSize:"13px"}}>Director & CEO : </strong> Vipul Upadhyay</li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i ></i> <strong style={{fontSize:"15px"}}>Sales inquiry: </strong></li>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Email : </strong>vipul.phytoingredients@gmail.com</li>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-phone"></i> <strong style={{fontSize:"13px"}}>Mobile no. : </strong> +91-8130000846</li>
                             </ul>
                             <ul style={{listStyle:"none", padding:"0"}}>
-                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-male"></i> <strong style={{fontSize:"13px"}}>MD : </strong> Ashish Singh</li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i></i> <strong style={{fontSize:"15px"}}>Purchase inquiry: </strong></li>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Email : </strong> phytoingredients@gmail.com</li>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-phone"></i> <strong style={{fontSize:"13px"}}>Mobile no. : </strong> +91-8840804180</li>
                             </ul>
                             <ul style={{listStyle:"none", padding:"0"}}>
-                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Office Email : </strong>phytoingredients@gmail.com</li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Office Email : </strong>phytoingredients@gmail.com, <br/>info@phytoingredients.com</li>
                             </ul>
                         
                     </div>
