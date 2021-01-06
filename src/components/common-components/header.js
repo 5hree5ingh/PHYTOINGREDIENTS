@@ -76,7 +76,7 @@ class Header extends React.Component {
                     <p style={{color:"white", fontSize:"14px",marginTop:"5px",textAlign:"right",paddingRight:"10px"}}><i class="fa fa-phone" style={{color:"white"}}></i> +91-8130000846, +91-8840804180</p>
                     </div>
                     <div className="email-id-container" style={{width:"35%"}}>
-                        <p style={{color:"white", fontWeight:"100", fontSize:"14px",marginTop:"5px",textAlign:"center",paddingRight:"10px"}}><i class="fa fa-envelope" style={{color:"white",marginRight:"10px"}}></i> phytoingredients@gmail.com</p>
+                        <p style={{color:"white", fontWeight:"100", fontSize:"14px",marginTop:"5px",textAlign:"center",paddingRight:"10px"}}><i class="fa fa-envelope" style={{color:"white",marginRight:"10px"}}></i> info@phytoingredients.com, phytoingredients@gmail.com</p>
                     </div>
                 </div>
                 <div className="lower-header" style={{display:"flex", justifyContent:"space-between", position:'sticky'}}>
