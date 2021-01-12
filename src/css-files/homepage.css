@@ -36,6 +36,49 @@ body{
 .about-service-container{
     width:100%;
     height:35vh;
+    background: whitesmoke;
+
+}
+.isoflexcon{
+    justify-content: space-around;
+
+}
+.iso-test2{
+    width: 200px;
+    margin-top: 15%;
+}
+.infra-con{
+    margin-left: 10%;
+}
+.infra1-container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 5px;
+}
+.infra1-container img{
+    width: 90vh;
+    height: 55vh;
+}
+.infra1-container div{
+    font-size: xx-large;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 400px;
+
+}
+.infra2-container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.infra2-container img{
+    width: 90vh;
+    height: 55vh;
+}
+.infra2-container div{
+    font-size: xx-large;
+    text-align:center;
+    vertical-align: middle;
+    line-height: 400px;
 }
 .service-heading{
     width: 40%;
@@ -79,8 +122,8 @@ body{
 }
 .product-and-service-container{
     width:100%;
-    height:125vh;
-    background: whitesmoke;
+    height:110vh;
+    /* background: whitesmoke; */
     flex-wrap: wrap;
     position: relative;
 }
@@ -348,6 +391,12 @@ body{
     height:65vh;
     background: whitesmoke;
 }
+
+.Certifications-container{
+    height:60vh;
+    background: whitesmoke;
+}
+
 .news-content-container{
     height:72%;
     padding-left:2%;
@@ -617,5 +666,45 @@ body{
     }
     .our-research-img{
         margin-top: 25px;
+    }
+    .isoflexcon{
+        flex-wrap: wrap;
+    }
+    .iso-test2{
+        width: 150px;
+        margin-top: 5%;
+    }
+    .Certifications-container{
+        height:85vh;
+    }
+    .infra1-container{
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin: 5px;
+    }
+    .infra1-container img{
+        width: 28vh;
+        height: 20vh;
+    }
+    .infra1-container div{
+        font-size: 7px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+    }
+    .infra2-container{
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin: 5px;
+    }
+    .infra2-container img{
+        width: 28vh;
+        height: 20vh;
+    }
+    .infra2-container div{
+        font-size: 7px;
+        text-align: right;
+        vertical-align: middle;
+        line-height: 100px;
     }
   }

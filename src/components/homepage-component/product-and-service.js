@@ -20,7 +20,7 @@ class Products extends React.Component {
                                 <img className="card-img-top" src={this.state.imageURL} alt="Card cap"></img>
                             </div>
                             <div class="card-body" style={{height:"30%"}}>
-                                <h5 class="card-title">{this.state.title}</h5>
+                                <h5 class="card-title" id={this.state.link}>{this.state.title}</h5>
                                 <p>{this.state.product_summary}</p>
                             </div>
                         </div>

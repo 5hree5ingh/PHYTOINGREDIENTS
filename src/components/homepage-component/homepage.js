@@ -4,6 +4,12 @@ import HomeCarousel from './homepage-carousel';
 import Products from './product-and-service';
 import ResearchAndEvent from './research-and-projecects';
 import OurPopularProducts from './popular-products';
+import halalPdf from '../../documents/halal.pdf';
+import msmePdf from '../../documents/msme.pdf';
+import isoPdf from '../../documents/iso.pdf';
+import kosherPdf from '../../documents/kosher.pdf';
+import haccpPdf from '../../documents/haccp.pdf';
+import gmpPdf from '../../documents/gmp.pdf';
 
 class Homepage extends React.Component{
     constructor(props){
@@ -113,6 +119,28 @@ class Homepage extends React.Component{
                             return <Products link={value.link} title={value.title} image={value.image}/>
                         })
                     }
+                    </div>
+                </div>
+                <div  id="/testnow" className="Certifications-container" style={{position:"relative"}}>
+                    <div className="product-container">
+                            <div className="container-heading">
+                                <h4 style={{"top":"25%"}}>Our Certifications</h4>
+                                <div className="star-container d-flex">
+                                    <div className="star" ></div>
+                                    <div className="star" ></div>
+                                    <div className="star" ></div>
+                                </div>
+                                <div className="line-container_1" style={{border:"0.5px solid green "}}></div>
+                                <div className="line-container_2" style={{border:"0.5px solid green "}}></div>
+                            </div>
+                            <div className="d-flex isoflexcon">
+                                <a href={isoPdf} target="_blank" className="iso-test"><img src="images/iso.png" alt="test" className="iso-test2"/></a>
+                                <a href={kosherPdf} target="_blank" className="iso-test"><img src="images/kosher.png" alt="test" className="iso-test2" style={{height: "93%"}} /></a>
+                                <a href={msmePdf} target="_blank" className="iso-test"><img src="images/msme.png" alt="test" className="iso-test2" style={{height: "93%"}} /></a>
+                                <a href={halalPdf} target="_blank" className="iso-test"><img src="images/halal.jpg" alt="test" className="iso-test2"/></a>
+                                <a href={gmpPdf} target="_blank" className="iso-test"><img src="images/gmp.jfif" alt="test" className="iso-test2"/></a>
+                                <a href={haccpPdf} target="_blank" className="iso-test"><img src="images/haccp.jfif" alt="test" className="iso-test2"/></a>
+                            </div>
                     </div>
                 </div>
                 <div className="research-and-events-container" >

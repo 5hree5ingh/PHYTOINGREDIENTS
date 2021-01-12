@@ -20,12 +20,12 @@ class Header extends React.Component {
                     link: '/about-us'
                 },
                 {
-                    list_value: 'Research & Projects',
-                    link: '/#research'
+                    list_value: 'Our Certifications',
+                    link: '/#/contact-form'
                 },
                 {
-                    list_value: 'Business Developement',
-                    link: '/buiseness-dev'
+                    list_value: 'Infrastructure',
+                    link: '/infrastructure'
                 },
                 {
                     list_value: 'Contact Us',
@@ -101,8 +101,8 @@ class Header extends React.Component {
                                     }
                                 </div>
                             </div>
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/#research" style={{textDecoration:"none"}}>Research & Projects</a></div>
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/buiseness-dev" style={{textDecoration:"none"}}>Business Developement</a></div>
+                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/#/contact-form" style={{textDecoration:"none"}}>Our Certifications</a></div>
+                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/infrastructure" style={{textDecoration:"none"}}>Infrastructure</a></div>
                         <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/contact-form" style={{textDecoration:"none"}}>Contact Us</a></div>
 
 

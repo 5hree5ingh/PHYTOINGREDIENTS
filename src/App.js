@@ -13,7 +13,7 @@ import Phytochemical from './components/products-services/phytochemical';
 import Oleoresines from './components/products-services/oleoresines';
 import ContractManufacturing from './components/products-services/contract-manufacturing';
 import AboutUs from './components/common-components/about-us';
-import BuisnessDevelopement from './components/common-components/buisness-devlopement';
+import Infrastructure from './components/common-components/buisness-devlopement';
 import NewsAndEventsComponents from './components/common-components/about-news-and-events';
 import ProductDevelopement from './components/common-components/project-2';
 import ProjectManagement from './components/common-components/project-3';
@@ -37,7 +37,7 @@ class App extends Component {
           <Route path='/oleoresines' component={Oleoresines} exact/>
           <Route path='/contact-form' component={ContractManufacturing} exact/>
           <Route path='/about-us' component={AboutUs} exact/>
-          <Route path='/buiseness-dev' component={BuisnessDevelopement} exact/>
+          <Route path='/infrastructure' component={Infrastructure} exact/>
           <Route path='/events-news' component={NewsAndEventsComponents} exact/>
           <Route path='/product-developement' component={ProductDevelopement} exact/>
           <Route path='/project-management' component={ProjectManagement} exact/>

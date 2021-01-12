@@ -1,24 +1,33 @@
 import React from 'react';
 import '../../css-files/about-us.css';
 
-class BuisnessDevelopement extends React.Component{
+class Infrastructure extends React.Component{
     render(){
         return(
             <div className="buisness-develeopement-container">
-                <h5 className="buisness-dev-heading"  className="business-heading">Welcome to join us:</h5>
-                <p className="buisness-dev-para">We are in constant search of partners that match our values, work ethics and commitment to patients. We regard partnership and collaboration as an integral part of our business strategy.</p>
-                <p className="buisness-dev-para">We constantly seek to strengthen our presence, with a range of herbal products.We are currently interested in products that are of high value. We seek products that leverage our core strengths and complement our existing product portfolio like:</p>
-                <ul className="buisness-dev-list">
-                    <li className="buisness-dev-list-item">Herbal API Products</li>
-                    <li className="buisness-dev-list-item">Phytochemicals</li>
-                    <li className="buisness-dev-list-item">Gums & Resin based products</li>
-                    <li className="buisness-dev-list-item">High value herbal extracts</li>
-                    <li className="buisness-dev-list-item">Herbaceuticals</li>
-                    <li className="buisness-dev-list-item">Nutraceuticals</li>
-                </ul>
+                <h5 className="buisness-dev-heading"  className="business-heading">Our Infrastructure: </h5>
+                <div className="infra-con">
+                    <div className="infra1-container" >
+                        <div>QA Department</div>
+                        <img src="/images/infra1.jpeg" />
+                    </div>
+                    <div className="infra2-container" >
+                        <img src="/images/infra2.jpeg" />
+                        <div>Manufacturing Facility</div>
+                    </div>
+                    <div className="infra1-container" >
+                        <div>Quality Control Department</div>
+                        <img src="/images/infra3.jpeg" />
+                    </div>
+                    <div className="infra2-container" >
+                        <img src="/images/infra4.jpeg" />
+                        <div>Finished Goods Storage Area</div>
+                    </div>
+
+                </div>
             </div>
         )
     }
 }
 
-export default BuisnessDevelopement;
+export default Infrastructure;
