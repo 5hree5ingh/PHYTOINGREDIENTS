@@ -5,7 +5,7 @@ class Infrastructure extends React.Component{
     render(){
         return(
             <div className="buisness-develeopement-container">
-                <h2 >Comming Soon....</h2>
+                <h2 >Coming Soon....</h2>
                 {/* <h5 className="buisness-dev-heading"  className="business-heading">Our Infrastructure: </h5>
                 <div className="infra-con">
                     <div className="infra1-container" >
