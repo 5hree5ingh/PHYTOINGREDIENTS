@@ -134,12 +134,12 @@ class Homepage extends React.Component{
                                 <div className="line-container_2" style={{border:"0.5px solid green "}}></div>
                             </div>
                             <div className="d-flex isoflexcon">
-                                <a href={isoPdf} target="_blank" className="iso-test"><img src="images/iso.png" alt="test" className="iso-test2"/></a>
-                                <a href={kosherPdf} target="_blank" className="iso-test"><img src="images/kosher.png" alt="test" className="iso-test2" style={{height: "93%"}} /></a>
-                                <a href={msmePdf} target="_blank" className="iso-test"><img src="images/msme.png" alt="test" className="iso-test2" style={{height: "93%"}} /></a>
-                                <a href={halalPdf} target="_blank" className="iso-test"><img src="images/halal.jpg" alt="test" className="iso-test2"/></a>
-                                <a href={gmpPdf} target="_blank" className="iso-test"><img src="images/gmp.jfif" alt="test" className="iso-test2"/></a>
-                                <a href={haccpPdf} target="_blank" className="iso-test"><img src="images/haccp.jfif" alt="test" className="iso-test2"/></a>
+                                <a href={isoPdf} target="_blank" className="iso-test"><img src="images/iso-bg.png" alt="test" className="iso-test2"/></a>
+                                <a href={kosherPdf} target="_blank" className="iso-test"><img src="images/kosher-bg.png" alt="test" className="iso-test2" style={{height: "93%"}} /></a>
+                                <a href={msmePdf} target="_blank" className="iso-test"><img src="images/msme-bg.png" alt="test" className="iso-test2" style={{height: "93%"}} /></a>
+                                <a href={halalPdf} target="_blank" className="iso-test"><img src="images/halal-bg.png" alt="test" className="iso-test2"/></a>
+                                <a href={gmpPdf} target="_blank" className="iso-test"><img src="images/gmp-bg.png" alt="test" className="iso-test2"/></a>
+                                <a href={haccpPdf} target="_blank" className="iso-test"><img src="images/haccp-bg.png" alt="test" className="iso-test2"/></a>
                             </div>
                     </div>
                 </div>
