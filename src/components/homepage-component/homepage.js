@@ -143,7 +143,7 @@ class Homepage extends React.Component{
                             </div>
                     </div>
                 </div>
-                <div className="research-and-events-container" >
+                <div className="research-and-events-container" style={{background:"whitesmoke"}} >
                 <div className="container-heading" id="research">
                                 <h4 style={{"top":"25%"}}>Our Research & Projects</h4>
                                 <div className="star-container d-flex">
