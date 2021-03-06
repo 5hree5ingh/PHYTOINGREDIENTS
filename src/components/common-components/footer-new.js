@@ -21,7 +21,7 @@ class Footer extends React.Component{
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/product-developement' style={{textDecoration:"none", color:'white', marginLeft:'8px', fontSize:'.9rem'}}>Consultant for Product Development</a></div>
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/project-management' style={{textDecoration:"none", color:'white', marginLeft:'8px', fontSize:'.9rem'}}>Consultant for Project Management</a></div>
                         <br/>
-                        <div className='footer-list-heading'>Get in Touch - GE</div>
+                        <div className='footer-list-heading'>Get in Touch - Germany</div>
                         <div style={{display:'flex'}}><i class="fa fa-address-card" aria-hidden="true" style={{marginTop:'2px'}}></i><div  style={{marginLeft:'5px'}}>Mutterstadter strasse 58, 68219, </div></div>
                         <div style={{marginLeft:'20px'}}>Mannheim, Germany</div>
                         <div><i class="fa fa-envelope" aria-hidden="true"></i>  export@phytoingredients.com</div>
@@ -29,7 +29,7 @@ class Footer extends React.Component{
 
                     </div>
                     <div className='footer-div'>
-                        <div className='footer-list-heading'>Get in Touch - IN</div>
+                        <div className='footer-list-heading'>Get in Touch - India</div>
                         <div className='footer-address'>
                         <div style={{fontWeight:'800'}}>Phyto Ingredients Biopharma Pvt. Ltd</div>
                         <div style={{display:'flex'}}><i class="fa fa-address-card" aria-hidden="true" style={{marginTop:'2px'}}></i><div  style={{marginLeft:'5px'}}> Gali no.1, Uttam colony, </div></div>
