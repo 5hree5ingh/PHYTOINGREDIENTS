@@ -140,6 +140,7 @@ class Homepage extends React.Component{
                                 <a href={halalPdf} target="_blank" className="iso-test"><img src="images/halal-bg.png" alt="test" className="iso-test2"/></a>
                                 <a href={gmpPdf} target="_blank" className="iso-test"><img src="images/gmp-bg.png" alt="test" className="iso-test2"/></a>
                                 <a href={haccpPdf} target="_blank" className="iso-test"><img src="images/haccp-bg.png" alt="test" className="iso-test2"/></a>
+                                <a target="_blank" className="iso-test"><img src="images/indiamart.png" alt="test" className="iso-test2"/></a>
                             </div>
                     </div>
                 </div>
