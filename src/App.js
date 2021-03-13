@@ -21,6 +21,7 @@ import Akba from './components/products-services/ppakba';
 import Ginseng from './components/products-services/ppginseng';
 import Curcumin95 from './components/products-services/ppcurcumin95';
 import Curcumin30 from './components/products-services/ppcurcumin30';
+import Gymnema from './components/products-services/gymnemasylvestre';
 
 class App extends Component {
   render() {
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path='/ginseng' component={Ginseng} exact />
           <Route path='/curcumin95' component={Curcumin95} exact />
           <Route path='/curcumin30' component={Curcumin30} exact />
+          <Route path='/gymnema' component={Gymnema} exact />
           <Footer />
         </div>
       </Router>

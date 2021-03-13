@@ -17,14 +17,19 @@ class Index extends React.Component {
             link: '/ginseng'
         },
         {
-            name:"Water dispersible Curcumin Extract 30%",
+            name:"Nano Curcumin Extract 30%",
             image_url: 'images/cur30.jpg',
             link: '/curcumin30'
         },
         {
             name:"Curcumin Extract 95% Curcuminoids",
             image_url: 'images/popular4.jpg',
-            link: 'curcumin95'
+            link: '/curcumin95'
+        },
+        {
+          name:"Gymnema dry extract 25-75%",
+          image_url: 'images/gyme.jpg',
+          link: '/gymnema'
         },
         {
           name:"AKBA 30%",
@@ -37,15 +42,20 @@ class Index extends React.Component {
           link: '/ginseng'
       },
       {
-          name:"Water dispersible Curcumin Extract 30%",
+          name:"Nano Curcumin Extract 30%",
           image_url: 'images/cur30.jpg',
           link: '/curcumin30'
       },
       {
           name:"Curcumin Extract 95% Curcuminoids",
           image_url: 'images/popular4.jpg',
-          link: 'curcumin95'
-      }
+          link: '/curcumin95'
+      },
+      {
+        name:"Gymnema dry extract 25-75%",
+        image_url: 'images/gyme.jpg',
+        link: '/gymnema'
+    }
     ]
     }
   }

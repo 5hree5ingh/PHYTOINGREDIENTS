@@ -16,20 +16,22 @@ class Footer extends React.Component{
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/essential-oil' style={{textDecoration:"none", color:'white', marginLeft:'8px', fontSize:'.9rem'}}>Essential Oils</a></div>
                     </div>
                     <div className='footer-div'>
-                        <div className='footer-list-heading'>Project’s & Services</div>
+                        {/* <div className='footer-list-heading'>Project’s & Services</div>
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/events-news' style={{textDecoration:"none", color:'white', marginLeft:'8px', fontSize:'.9rem'}}>Consultant for Herbal Extraction Project’s</a></div>
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/product-developement' style={{textDecoration:"none", color:'white', marginLeft:'8px', fontSize:'.9rem'}}>Consultant for Product Development</a></div>
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/project-management' style={{textDecoration:"none", color:'white', marginLeft:'8px', fontSize:'.9rem'}}>Consultant for Project Management</a></div>
-                        <br/>
-                        <div className='footer-list-heading'>Get in Touch - Germany</div>
+                        <br/> */}
+                        <div className='footer-address'>
+                        <div className='footer-list-heading'>Get in Touch - GERMANY</div>
                         <div style={{display:'flex'}}><i class="fa fa-address-card" aria-hidden="true" style={{marginTop:'2px'}}></i><div  style={{marginLeft:'5px'}}>Mutterstadter strasse 58, 68219, </div></div>
                         <div style={{marginLeft:'20px'}}>Mannheim, Germany</div>
+                        <div style={{display:'flex'}}><i class="fa fa-user" aria-hidden="true"  style={{marginTop:'2px'}}></i> <div  style={{marginLeft:'10px'}}> +49-176-22293400</div></div>
                         <div><i class="fa fa-envelope" aria-hidden="true"></i>  export@phytoingredients.com</div>
-                        
+                        </div>
 
                     </div>
                     <div className='footer-div'>
-                        <div className='footer-list-heading'>Get in Touch - India</div>
+                        <div className='footer-list-heading'>Get in Touch - INDIA</div>
                         <div className='footer-address'>
                         <div style={{fontWeight:'800'}}>Phyto Ingredients Biopharma Pvt. Ltd</div>
                         <div style={{display:'flex'}}><i class="fa fa-address-card" aria-hidden="true" style={{marginTop:'2px'}}></i><div  style={{marginLeft:'5px'}}> Gali no.1, Uttam colony, </div></div>

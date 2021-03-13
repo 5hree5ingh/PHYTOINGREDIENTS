@@ -86,11 +86,13 @@ class Contactus extends React.Component {
                     <div className="company-details">
                     <h2 style={{textAlign:"left", fontSize:"19px", fontWeight:"bold"}}>Phyto Ingredients Biopharma Pvt. Ltd</h2>
                     <ul style={{listStyle:"none", padding:"0"}}>
-                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Office address - India : </strong>Gali no.1, Uttam colony,<br></br>Near post office, Jhajjar road,Bahadurgarh,<br></br> Haryana, India-124507</li>
-                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Office address - Germany : </strong>Mutterstadter strasse 58, 68219,<br></br>Mannheim, Germany</li>
+                        <li style={{fontSize:"14px", textAlign:"justify"}}><i ></i> <strong style={{fontSize:"15px"}}>Regd. Office: </strong></li>
+                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Office address - INDIA : </strong>Gali no.1, Uttam colony,<br></br>Near post office, Jhajjar road,Bahadurgarh,<br></br> Haryana, India-124507</li>
+                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Factory address : </strong>Khasra No. 3030/718, 3021/718,<br></br>Sonipat Khorkhoda Road, VPO Asoudha Todran,<br></br>Tehsil Bahadurgarh, Jhajjar, Haryana, 124505</li>
                     </ul>
                     <ul style={{listStyle:"none", padding:"0"}}>
-                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Factory address : </strong>Khasra No. 3030/718, 3021/718,<br></br>Sonipat Khorkhoda Road, VPO Asoudha Todran,<br></br>Tehsil Bahadurgarh, Jhajjar, Haryana, 124505</li>
+                        <li style={{fontSize:"14px", textAlign:"justify"}}><i ></i> <strong style={{fontSize:"15px"}}>Corr. Office: </strong></li>
+                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Office address - GERMANY : </strong>Mutterstadter strasse 58, 68219,<br></br>Mannheim, Germany</li>
                     </ul>
                             <ul style={{listStyle:"none", padding:"0"}}>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i ></i> <strong style={{fontSize:"15px"}}>Sales inquiry: </strong></li>
@@ -99,11 +101,13 @@ class Contactus extends React.Component {
                             </ul>
                             <ul style={{listStyle:"none", padding:"0"}}>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i></i> <strong style={{fontSize:"15px"}}>Purchase inquiry: </strong></li>
-                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Email : </strong> phytoingredients@gmail.com</li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Email : </strong> phytoingredients@gmail.com,<br /> info@phytoingredients.com</li>
                                 <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-phone"></i> <strong style={{fontSize:"13px"}}>Mobile no. : </strong> +91-8840804180</li>
                             </ul>
                             <ul style={{listStyle:"none", padding:"0"}}>
-                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Office Email : </strong>phytoingredients@gmail.com, <br/>info@phytoingredients.com</li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i></i> <strong style={{fontSize:"15px"}}>Export inquiry: </strong></li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-envelope"></i> <strong style={{fontSize:"13px"}}>Email : </strong> export@phytoingredients.com</li>
+                                <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-phone"></i> <strong style={{fontSize:"13px"}}>Mobile no. : </strong> +49-176-22293400</li>
                             </ul>
                         
                     </div>
