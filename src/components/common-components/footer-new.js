@@ -49,11 +49,11 @@ class Footer extends React.Component{
                 </div>
                 <div className='footer-contact-us'>
                     <div className='contact-icon-cntainer'>
-                        <a href='https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href='https://www.twitter.com' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href='https://www.instagram.com' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href='https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited?trk=company_home_typeahead_result' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href='https://www.google.com' style={{color:'white'}}><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        <a href='https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-facebook" aria-hidden="true"></i> </a>
+                        <a href='https://www.twitter.com' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-twitter" aria-hidden="true"></i> </a>
+                        <a href='https://www.instagram.com' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                        <a href='https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited?trk=company_home_typeahead_result' style={{color:'white', borderRight:'1px solid'}}><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+                        <a href='https://www.google.com' style={{color:'white'}}><i class="fa fa-google-plus" aria-hidden="true"></i> </a>
                     </div>
                     <div>
                         <i class="fa fa-copyright" aria-hidden="true"></i> All right Reversed, Phytoingredients

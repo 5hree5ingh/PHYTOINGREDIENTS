@@ -68,9 +68,9 @@ class Header extends React.Component {
             <div className="header-main-div">
                 <div className="upper-header">
                     <div className="social-media-tag-container" style={{display:"flex", marginRight:'auto'}}>
-                        <a href='https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href='https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited?trk=company_home_typeahead_result' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href='https://www.google.com' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        <a href='https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-facebook" aria-hidden="true"></i> </a>
+                        <a href='https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited?trk=company_home_typeahead_result' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+                        <a href='https://www.google.com' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-google-plus" aria-hidden="true"></i> </a>
                     </div>
                     <div className="phone-number-container" style={{width:"35%",borderRight:"1px solid white",paddingRight:"3px"}}>
                     <p style={{color:"white", fontSize:"14px",marginTop:"5px",textAlign:"right",paddingRight:"10px"}}><i class="fa fa-phone" style={{color:"white"}}></i> +91-8130000846, +91-8840804180</p>
