@@ -86,8 +86,8 @@ class Contactus extends React.Component {
                     <div className="company-details">
                     <h2 style={{textAlign:"left", fontSize:"19px", fontWeight:"bold"}}>Phyto Ingredients Biopharma Pvt. Ltd</h2>
                     <ul style={{listStyle:"none", padding:"0"}}>
-                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Regd. Office - INDIA : </strong>Gali no.1, Uttam colony,<br></br>Near post office, Jhajjar road,Bahadurgarh,<br></br> Haryana, India-124507</li>
-                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Factory : </strong>Khasra No. 3030/718, 3021/718,<br></br>Sonipat Khorkhoda Road, VPO Asoudha Todran,<br></br>Tehsil Bahadurgarh, Jhajjar, Haryana, 124505</li>
+                        <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Regd. Office - INDIA : </strong>Khasara No. 587, Akbarpuruood,<br></br>Behind Shree Cement, Lakshar Road, Lakshar<br></br> Haridwar, Uttarakhand, India-247663</li>
+                        
                     </ul>
                     <ul style={{listStyle:"none", padding:"0"}}>
                         <li style={{fontSize:"14px", textAlign:"justify"}}><i class="fa fa-location-arrow"></i> <strong style={{fontSize:"13px"}}>Corr. Office - GERMANY : </strong>Mutterstadter strasse 58,<br></br> 68219, Mannheim, Germany</li>

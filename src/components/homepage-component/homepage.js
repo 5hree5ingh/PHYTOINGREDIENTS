@@ -10,6 +10,7 @@ import isoPdf from '../../documents/iso.pdf';
 import kosherPdf from '../../documents/kosher.pdf';
 import haccpPdf from '../../documents/haccp.pdf';
 import gmpPdf from '../../documents/gmp.pdf';
+import fssaiPdf from '../../documents/FSSAI.pdf';
 
 class Homepage extends React.Component{
     constructor(props){
@@ -140,7 +141,7 @@ class Homepage extends React.Component{
                                 <a href={halalPdf} target="blank" className="iso-test"><img src="images/halal-bg.png" alt="test" className="iso-test2"/> </a>
                                 <a href={gmpPdf} target="blank" className="iso-test"><img src="images/gmp-bg.png" alt="test" className="iso-test2"/> </a>
                                 <a href={haccpPdf} target="blank" className="iso-test"><img src="images/haccp-bg.png" alt="test" className="iso-test2"/> </a>
-                                <a href={haccpPdf} target="blank" className="iso-test"><img src="images/indiamart.png" alt="test" className="iso-test2"/> </a>
+                                <a href={fssaiPdf} target="blank" className="iso-test"><img src="images/FSSAI_logo.png" alt="test" className="iso-test2"/> </a>
                             </div>
                     </div>
                 </div>
