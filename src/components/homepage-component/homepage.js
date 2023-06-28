@@ -5,7 +5,7 @@ import Products from './product-and-service';
 import ResearchAndEvent from './research-and-projecects';
 import OurPopularProducts from './popular-products';
 import halalPdf from '../../documents/halal.pdf';
-import msmePdf from '../../documents/msme.pdf';
+import msme from '../../documents/msme.pdf';
 import isoPdf from '../../documents/iso.pdf';
 import kosherPdf from '../../documents/kosher.pdf';
 import haccpPdf from '../../documents/haccp.pdf';
@@ -137,7 +137,7 @@ class Homepage extends React.Component{
                             <div className="d-flex isoflexcon">
                                 <a href={isoPdf} target="blank" className="iso-test"><img src="images/iso-bg.png" alt="test" className="iso-test2"/> </a>
                                 <a href={kosherPdf} target="blank" className="iso-test"><img src="images/kosher-bg.png" alt="test" className="iso-test2" style={{height: "90%"}} /> </a>
-                                <a href={msmePdf} target="blank" className="iso-test"><img src="images/msme-bg.png" alt="test" className="iso-test2" style={{height: "90%"}} /> </a>
+                                <a href={msme} target="blank" className="iso-test"><img src="images/msme-bg.png" alt="test" className="iso-test2" style={{height: "90%"}} /> </a>
                                 <a href={halalPdf} target="blank" className="iso-test"><img src="images/halal-bg.png" alt="test" className="iso-test2"/> </a>
                                 <a href={gmpPdf} target="blank" className="iso-test"><img src="images/gmp-bg.png" alt="test" className="iso-test2"/> </a>
                                 <a href={haccpPdf} target="blank" className="iso-test"><img src="images/haccp-bg.png" alt="test" className="iso-test2"/> </a>
