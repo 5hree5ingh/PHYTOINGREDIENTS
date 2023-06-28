@@ -59,6 +59,7 @@ class EssentialOil extends React.Component{
                     <NavLink to='/standardized-herbal-extracts' activeClassName='active'><div className='button'>Standardized Herbal Extracts</div></NavLink>
                     <NavLink to='/phytochemical' activeClassName='active'><div className='button'>Phytochemical</div></NavLink>
                     <NavLink to='/oleoresines' activeClassName='active'><div className='button'>Oleoresines</div></NavLink>
+                    <NavLink to='/spray-dried-fruits-and-vegetable-powders' activeClassName='active'><div className='button'>Spray Dried Fruits</div></NavLink>
                 </div>
                 <div className='product-heading-container'>
                     <div><h2>Essential Oils</h2></div>

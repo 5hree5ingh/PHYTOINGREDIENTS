@@ -22,6 +22,7 @@ import Ginseng from './components/products-services/ppginseng';
 import Curcumin95 from './components/products-services/ppcurcumin95';
 import Curcumin30 from './components/products-services/ppcurcumin30';
 import Gymnema from './components/products-services/gymnemasylvestre';
+import SprayDriedFruitsandVegetablePowders from './components/products-services/spray-dried-fruits-and-vegetable-powders';
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
           <Route path='/cosmoceutical-herbal-products' component={Cosmoceutical} exact/>
           <Route path='/phytochemical' component={Phytochemical} exact/>
           <Route path='/oleoresines' component={Oleoresines} exact/>
+          <Route path='/spray-dried-fruits-and-vegetable-powders' component={SprayDriedFruitsandVegetablePowders} exact/>
           <Route path='/contact-form' component={ContractManufacturing} exact/>
           <Route path='/about-us' component={AboutUs} exact/>
           <Route path='/infrastructure' component={Infrastructure} exact/>

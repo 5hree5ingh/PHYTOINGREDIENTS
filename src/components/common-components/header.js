@@ -58,6 +58,10 @@ class Header extends React.Component {
                 {
                     content: "Oleoresines",
                     link: '/oleoresines'
+                },
+                {
+                    content: "Spray Dried Fruits and Vegetable Powders",
+                    link: '/spray-dried-fruits-and-vegetable-powders'
                 }
             ]
         }
