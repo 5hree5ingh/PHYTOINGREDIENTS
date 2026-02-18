@@ -2,130 +2,114 @@ import React from 'react';
 import '../../css-files/header.css';
 
 class Header extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            isVisible: false,
-            home: [
-                "hello1",
-                "hello2"
-            ],
+            scrolled: false,
             menuList: [
-                {
-                    list_value: 'Home',
-                    link: '/'
-                },
-                {
-                    list_value: 'About Us',
-                    link: '/about-us'
-                },
-                {
-                    list_value: 'Our Certifications',
-                    link: '/#/contact-form'
-                },
-                {
-                    list_value: 'Infrastructure',
-                    link: '/infrastructure'
-                },
-                {
-                    list_value: 'Contact Us',
-                    link: '/contact-form'
-                }
-                
+                { list_value: 'Home', link: '/' },
+                { list_value: 'About Us', link: '/about-us' },
+                { list_value: 'Our Certifications', link: '/#/contact-form' },
+                { list_value: 'Infrastructure', link: '/infrastructure' },
+                { list_value: 'Contact Us', link: '/contact-form' }
             ],
-            socialMediaIcon:[
-                'images/fb2.png',
-                'images/twit1.png',
-                'images/lin1.png'
-            ],
-            productList:[
-                {
-                    content: 'Essential Oils',
-                    link: '/essential-oil'
-                },
-                {
-                    content: 'Cosmeceutical Ingredients',
-                    link: '/cosmoceutical-herbal-products'
-                },
-                {
-                    content: 'Standardized Herbal Extracts',
-                    link: '/standardized-herbal-extracts'
-                },
-                {
-                    content: 'Phytochemicals',
-                    link: '/phytochemical'
-                },
-                {
-                    content: "Oleoresines",
-                    link: '/oleoresines'
-                },
-                {
-                    content: "Spray Dried Fruits and Vegetable Powders",
-                    link: '/spray-dried-fruits-and-vegetable-powders'
-                }
+            productList: [
+                { content: 'Essential Oils', link: '/essential-oil' },
+                { content: 'Cosmeceutical Ingredients', link: '/cosmoceutical-herbal-products' },
+                { content: 'Standardized Herbal Extracts', link: '/standardized-herbal-extracts' },
+                { content: 'Phytochemicals', link: '/phytochemical' },
+                { content: 'Oleoresines', link: '/oleoresines' },
+                { content: 'Spray Dried Fruits and Vegetable Powders', link: '/spray-dried-fruits-and-vegetable-powders' }
             ]
+        };
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, { passive: true });
+        // Run once on mount in case page loads already scrolled
+        this.handleScroll();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll() {
+        const scrolled = window.scrollY > 40;
+        if (scrolled !== this.state.scrolled) {
+            this.setState({ scrolled });
         }
     }
 
-    render(){
-        return(
-            <div className="header-main-div">
-                <div className="upper-header">
-                    <div className="social-media-tag-container" style={{display:"flex", marginRight:'auto'}}>
-                        <a href='https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-facebook" aria-hidden="true"></i> </a>
-                        <a href='https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited?trk=company_home_typeahead_result' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
-                        <a href='https://www.google.com' style={{width:'50px',color:'white', fontSize:'24px', marginLeft:'4px',borderRight:'1px solid white',padding:'2px 5px 2px 5px'}}><i class="fa fa-google-plus" aria-hidden="true"></i> </a>
-                    </div>
-                    <div className="phone-number-container" style={{width:"35%",borderRight:"1px solid white",paddingRight:"3px"}}>
-                    <p style={{color:"white", fontSize:"14px",marginTop:"5px",textAlign:"right",paddingRight:"10px"}}><i class="fa fa-phone" style={{color:"white"}}></i> +91-8130000846, +91-8840804180</p>
-                    </div>
-                    <div className="email-id-container" style={{width:"35%"}}>
-                        <p style={{color:"white", fontWeight:"100", fontSize:"14px",marginTop:"5px",textAlign:"center",paddingRight:"10px"}}><i class="fa fa-envelope" style={{color:"white",marginRight:"10px"}}></i> info@phytoingredients.com, phytoingredients@gmail.com</p>
-                    </div>
-                </div>
-                <div className="lower-header" style={{display:"flex", justifyContent:"space-between", position:'sticky'}}>
+    render() {
+        const { scrolled } = this.state;
+        return (
+            <div className={`header-main-div${scrolled ? ' scrolled' : ''}`}>
+                <div className="lower-header">
+
+                    {/* Logo */}
                     <div className="logo-container">
-                        <a href='/'><img src="images/Visiting_Card.png" alt="logo"></img></a>
+                        <a href='/'>
+                            <img
+                                src="/images/phytologo.png"
+                                alt="Phyto Ingredients"
+                                className="logo-img"
+                            />
+                            <span className="logo-brand-name">PhytoIngredients</span>
+                        </a>
                     </div>
+
+                    {/* Nav Menu */}
                     <div className="header-menu-list-container">
-                        {/* {
-                            this.state.menuList.map(value => {
-                                return <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".8em",paddingTop:"25px"}}><a href={value.link} style={{textDecoration:"none"}}>{value.list_value.toUpperCase()}</a></div>
-                            })
-                        } */}
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/" style={{textDecoration:"none"}}>Home</a></div>
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/about-us" style={{textDecoration:"none"}}>About Us</a></div>
-                        <div class="dropdown" style={{paddingTop:"5px"}}>
-                                <p class="dropbtn">Products & Services</p>
-                                <div class="dropdown-content">
-                                    {
-                                        this.state.productList.map(value => {
-                                            return <a href={value.link} style={{fontSize:"14px"}}>{value.content}</a>
-                                        })
-                                    }
-                                </div>
+                        <div className="menu-list-item">
+                            <a href="/">Home</a>
+                        </div>
+                        <div className="menu-list-item">
+                            <a href="/about-us">About Us</a>
+                        </div>
+                        <div className="dropdown">
+                            <button className="dropbtn">Products &amp; Services</button>
+                            <div className="dropdown-content">
+                                {this.state.productList.map((value, i) => (
+                                    <a key={i} href={value.link}>{value.content}</a>
+                                ))}
                             </div>
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/#/contact-form" style={{textDecoration:"none"}}>Our Certifications</a></div>
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/infrastructure" style={{textDecoration:"none"}}>Infrastructure</a></div>
-                        <div className="menu-list-item" style={{width:"auto",height:"65px",marginRight:"3%",fontSize:".9em",paddingTop:"25px"}}><a href="/contact-form" style={{textDecoration:"none"}}>Contact Us</a></div>
+                        </div>
+                        <div className="menu-list-item">
+                            <a href="/#/contact-form">Our Certifications</a>
+                        </div>
+                        <div className="menu-list-item">
+                            <a href="/infrastructure">Infrastructure</a>
+                        </div>
+                        <div className="menu-list-item">
+                            <a href="/contact-form">Contact Us</a>
+                        </div>
 
+                        {/* Social Icons */}
+                        <div className="nav-social-icons">
+                            <a href="https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/" target="_blank" rel="noopener noreferrer" title="Facebook">
+                                <i className="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                                <i className="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                                <i className="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </div>
 
-                            
-                            
-                                <img src="/images/menu.png" alt="menu" id="menu-image"/>
-                                <div className="menu-dropdown">
-                                    {
-                                        this.state.menuList.map(value => {
-                                            return <a href={value.link}>{value.list_value}</a>
-                                        })
-                                    }
-                                </div>
-                        
-                            
+                        {/* Mobile hamburger */}
+                        <img src="/images/menu.png" alt="menu" id="menu-image" />
+                        <div className="menu-dropdown">
+                            {this.state.menuList.map((value, i) => (
+                                <a key={i} href={value.link}>{value.list_value}</a>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 

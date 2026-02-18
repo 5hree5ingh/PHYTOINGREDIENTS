@@ -1,44 +1,32 @@
 import React from 'react';
 
-class HomepageCarosusel extends React.Component{
-    render(){
-        return(
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <img src="/images/mobile-fresh.jpg" alt="mobile-fresh" className="mobile-homepage"/>
-            <div class="carousel-inner">
-                <div class="carousel-item active container-slider">
-                    <img src="images/s1.jpg" alt="First slide" height="100%"></img>
-                    <div className="content-slider">
-                        <h1>STANDARDISED HERBAL EXTRACT</h1>
-                        <p>Producer, supplier & Exporter of Standardised Herbal Extracts, Aqueous Herbal Extracts, Cosmoceutical Ingredients.</p>
+class HomepageCarousel extends React.Component {
+    render() {
+        return (
+            <div className="hero-section">
+                <div className="hero-overlay"></div>
+                <img
+                    src="images/bg-1.jpg"
+                    alt="Phyto Ingredients Lab"
+                    className="hero-bg-image"
+                />
+                <div className="hero-content">
+                    <h1 className="hero-title">Nature's Precision,<br />Scientifically Perfected</h1>
+                    <p className="hero-subtitle">
+                        Producer, Supplier &amp; Exporter of Standardised Herbal Extracts,<br />
+                        Phytochemicals &amp; Cosmoceutical Ingredients
+                    </p>
+                    <div className="hero-buttons">
+                        <a href="/about-us" className="hero-btn hero-btn-primary">Discover More</a>
+                        <a href="/contact-form" className="hero-btn hero-btn-outline">Contact Us</a>
                     </div>
                 </div>
-                <div class="carousel-item container-slider">
-                    <img src="images/s2.jpg" alt="Second slide" height="100%"></img>
-                    <div className="content-slider">
-                        <h1>PHYTOCHEMICALS (API)</h1>
-                        <p>Manufacturer, supplier and Exporter of Quality Phytochemicals (API) which comply the international pharmacopoeia specification and standards.</p>
-                    </div>
-                </div>
-                <div class="carousel-item container-slider">
-                    <img src="images/s3.jpg" alt="Third slide"></img>
-                    <div className="content-slider">
-                        <h1>ESSENTIAL OIL AND OLEORESINE</h1>
-                        <p>Reliable and regular  supplier of essential and oleoresine.</p>
-                    </div>
+                <div className="hero-scroll-indicator">
+                    <div className="hero-scroll-dot"></div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-    </div>
-        )
+        );
     }
 }
 
-export default HomepageCarosusel;
+export default HomepageCarousel;
