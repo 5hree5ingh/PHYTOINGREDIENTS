@@ -1,0 +1,104 @@
+/* Infinite auto-scrolling carousel for Popular Products */
+.pp-carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fade-out edges for a polished look */
+.pp-carousel-wrapper::before,
+.pp-carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.pp-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.pp-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+}
+
+/* The scrolling track */
+.pp-carousel-track {
+    display: flex;
+    gap: 20px;
+    padding: 20px 10px;
+    animation: pp-scroll 30s linear infinite;
+    width: max-content;
+}
+
+.pp-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes pp-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* moves by half because list is duplicated */
+    }
+}
+
+/* Individual product card */
+.pp-card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-width: 200px;
+    height: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.pp-card-img-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.pp-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.pp-card:hover .pp-card-img-wrap img {
+    transform: scale(1.06);
+}
+
+.pp-card-body {
+    padding: 10px 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.pp-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d5a27;
+    line-height: 1.3;
+}
