@@ -55,8 +55,8 @@ class Homepage extends React.Component {
             ],
             stats: [
                 { value: '500+', label: 'Products' },
-                { value: '20+', label: 'Years Experience' },
-                { value: '50+', label: 'Countries Served' },
+                { value: '10+', label: 'Years Experience' },
+                { value: '10+', label: 'Countries Served' },
                 { value: '100%', label: 'Quality Assured' }
             ]
         };
