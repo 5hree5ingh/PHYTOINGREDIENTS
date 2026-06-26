@@ -1,8 +1,58 @@
-*{
+/* ============================================================
+   PHYTO INGREDIENTS - INPUT FIELD CSS
+   Premium Redesign — matches homepage green luxury theme
+   ============================================================ */
+
+* {
     box-sizing: border-box;
 }
-.input-field-container{
-    width:45%;
-    height:55px;
-    padding:10px 
+
+.input-field-container {
+    width: 45%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    align-items: stretch;
+}
+
+.inputs-icon-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    min-width: 44px;
+    background: linear-gradient(135deg, var(--green-dark, #1a5c1a), var(--green-primary, #2d7a2d)) !important;
+    border-radius: var(--radius-sm, 8px) 0 0 var(--radius-sm, 8px) !important;
+    color: white;
+}
+
+.inputs-icon-container i {
+    font-size: 14px !important;
+    color: white !important;
+    margin: 0 !important;
+}
+
+.input-field-container input {
+    width: 100% !important;
+    border: 1px solid rgba(45, 122, 45, 0.15) !important;
+    border-left: none !important;
+    border-radius: 0 var(--radius-sm, 8px) var(--radius-sm, 8px) 0 !important;
+    padding: 12px 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9rem !important;
+    color: var(--text-dark, #1a2e1a) !important;
+    background: var(--off-white, #f8fdf8);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-field-container input::placeholder {
+    color: var(--text-light, #718096);
+    font-weight: 400;
+}
+
+.input-field-container input:focus {
+    border-color: var(--green-primary, #2d7a2d) !important;
+    box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.12);
+    background: var(--white, #ffffff);
 }

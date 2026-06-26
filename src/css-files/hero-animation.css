@@ -1,0 +1,14 @@
+/* Hero frame animation — smooth fade-in on each new frame */
+.hero-frame {
+    animation: heroFadeIn 0.05s ease-in-out;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

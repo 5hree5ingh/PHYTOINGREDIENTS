@@ -9,18 +9,27 @@ import Paper from '@material-ui/core/Paper';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: "#568c11",
+    background: 'linear-gradient(135deg, #1a5c1a 0%, #2d7a2d 100%)',
     color: theme.palette.common.white,
+    fontFamily: "'Inter', sans-serif",
+    fontSize: 13,
+    letterSpacing: '0.3px',
   },
   body: {
     fontSize: 14,
+    fontFamily: "'Inter', sans-serif",
+    color: '#4a5568',
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles(theme => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: '#f8fdf8',
+    },
+    '&:hover': {
+      backgroundColor: '#e8f5e9',
+      transition: 'background-color 0.2s ease',
     },
   },
 }))(TableRow);
@@ -32,9 +41,9 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(3),
         marginBottom: '50px',
         overflowX: 'auto',
-        border: '2px solid #d4d8d6',
-        borderRadius: '10px',
-        boxShadow: '10px 10px 10px #c3c3c3'
+        border: '1px solid rgba(45, 122, 45, 0.12)',
+        borderRadius: '16px',
+        boxShadow: '0 8px 24px rgba(45, 122, 45, 0.12)',
   },
   table: {
     minWidth: 700,

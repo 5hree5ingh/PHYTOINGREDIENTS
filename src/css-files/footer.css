@@ -1,57 +1,174 @@
+/* ============================================================
+   PHYTO INGREDIENTS - FOOTER CSS
+   Premium Redesign — matches homepage green luxury theme
+   ============================================================ */
 
-
-.footer-new-container{
-    border: 2px solid;
+.footer-new-container {
+    border: none;
     color: white;
-    background: #568c11;
+    background: linear-gradient(160deg, #0d2e0d 0%, var(--green-dark, #1a5c1a) 40%, var(--green-primary, #2d7a2d) 100%);
+    position: relative;
+    overflow: hidden;
 }
-.footer-lists{
+
+/* Subtle decorative overlay */
+.footer-new-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.footer-lists {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: start;
+    padding: 20px 4% 10px;
+    gap: 20px;
 }
-.footer-div a:hover{
-    font-weight: bold;
-}
-.footer-div{
+
+.footer-div {
     margin: 25px 0 0 20px;
 }
-.footer-list-heading{
-    font-size: 20px;
+
+.footer-list-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
     padding-left: 15px;
-    border-left: 4px solid;
+    border-left: 4px solid var(--green-light, #4caf50);
+    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.footer-div a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-div a:hover {
+    font-weight: 500;
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.footer-div > div {
+    padding: 3px 0;
+    transition: all 0.2s ease;
+}
+
+.footer-div > div i.fa-chevron-right {
+    font-size: 0.65rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.footer-div > div:hover i.fa-chevron-right {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.footer-address {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-address i {
+    color: var(--green-light, #4caf50);
+    opacity: 0.8;
+}
+
+/* ---- Social icons & copyright ---- */
+.footer-contact-us {
+    text-align: center;
+    padding: 20px 20px 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 6%;
+}
+
+.contact-icon-cntainer {
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
 .contact-icon-cntainer i {
     margin: 10px;
-    font-size: 20px;
-
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-.footer-div a {
-    font-weight: 200;
-}
-.footer-address {
-    font-size: .9rem;
-    font-weight: 200;
-}
-.footer-grass{
-    width:200%;
-    margin-top:-35px
+.contact-icon-cntainer a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    border-right: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-@media screen and (max-width: 600px) {
-    .footer-lists{
+.contact-icon-cntainer a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon-cntainer a i {
+    margin: 0;
+}
+
+.footer-contact-us > div:last-child {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.5px;
+    padding: 8px 0;
+}
+
+/* ---- Grass image decoration ---- */
+.footer-grass {
+    width: 200%;
+    margin-top: -35px;
+    opacity: 0.4;
+    filter: brightness(0.7);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+    .footer-lists {
         grid-template-columns: 1fr;
         text-align: start;
+        gap: 0;
     }
-    .footer-div{
-        margin: 25px 0 0 30px;
+
+    .footer-div {
+        margin: 20px 0 0 20px;
     }
-    .footer-grass{
-        width:400%;
-        margin-top:-5px;
+
+    .footer-grass {
+        width: 400%;
+        margin-top: -5px;
+    }
+
+    .footer-contact-us {
+        margin: 0 4%;
     }
 }

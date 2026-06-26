@@ -1,65 +1,159 @@
+/* ============================================================
+   PHYTO INGREDIENTS - PRODUCTS & SERVICES CSS
+   Premium Redesign — matches homepage green luxury theme
+   ============================================================ */
 
-  .product-heading-container {
-    background: #568c11; /* Fallback color */
+.product-heading-container {
+    background: linear-gradient(135deg, var(--green-dark, #1a5c1a) 0%, var(--green-primary, #2d7a2d) 60%, var(--green-accent, #568c11) 100%);
     background-image: url('./hbg1.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
     color: #f1f1f1;
     width: 100%;
-    padding: 15px 68px;
+    padding: 40px 68px;
     text-align: start;
     display: flex;
     justify-content: space-between;
-  }
-.product-inquiry{
-  border: 2px solid;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  text-decoration: none;
+    align-items: center;
+    overflow: hidden;
 }
 
-.product-inquiry:hover{
-  background: rgb(66, 153, 66);
-  border: 2px solid black;
-  
+/* Dark overlay on image for readability */
+.product-heading-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(10, 40, 10, 0.75) 0%,
+        rgba(30, 80, 30, 0.65) 50%,
+        rgba(45, 122, 45, 0.55) 100%);
+    z-index: 0;
 }
-.map {
-  height: 300px;
-}
-  .button {
-    /* width: 250px; */
-    padding: 8px 0px 8px 0px;
-    margin: 10px;
-  }
 
-  .active{
-    background: #568c11;
+.product-heading-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.product-heading-container div h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.product-inquiry {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
     color: white;
-    border-radius: 10px;
-    font-weight: bolder;
-  }
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    backdrop-filter: blur(6px);
+}
 
-  .product-tablename-container{
-    background: #f1f1f1;
-    display : flex;
-    justify-content: space-around;
-    margin: 10px 0 10px 0;  
-  }
- 
+.product-inquiry:hover {
+    background: var(--white, #ffffff);
+    color: var(--green-primary, #2d7a2d);
+    border-color: var(--white, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
 
-  @media only screen and (max-width:750px) {
-    .product-tablename-container{
-      display: none;
+.map {
+    height: 300px;
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(45, 122, 45, 0.18));
+}
+
+/* ---- Product category tab navigation ---- */
+.product-tablename-container {
+    background: var(--off-white, #f8fdf8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 16px 5%;
+    border-bottom: 1px solid rgba(45, 122, 45, 0.1);
+}
+
+.product-tablename-container a {
+    text-decoration: none;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-mid, #4a5568);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+.button:hover {
+    color: var(--green-primary, #2d7a2d);
+    background: var(--green-pale, #e8f5e9);
+    border-color: rgba(45, 122, 45, 0.15);
+}
+
+.active {
+    background: linear-gradient(135deg, var(--green-dark, #1a5c1a), var(--green-primary, #2d7a2d));
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 16px rgba(45, 122, 45, 0.35);
+}
+
+.active .button {
+    color: white;
+    font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media only screen and (max-width: 750px) {
+    .product-tablename-container {
+        display: none;
     }
-    .popular-product-img{
-      width: 100%
+
+    .popular-product-img {
+        width: 100%;
     }
+
     .product-heading-container div h2 {
-      font-size: 25px;
-      margin-top: 13px;
+        font-size: 1.4rem;
+        margin-top: 8px;
     }
-    .product-heading-container{
-      justify-content: space-evenly;
-      padding: 20px
+
+    .product-heading-container {
+        justify-content: space-between;
+        padding: 28px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
     }
-    
-  }
+
+    .product-inquiry {
+        padding: 10px 24px;
+        font-size: 0.82rem;
+    }
+}
