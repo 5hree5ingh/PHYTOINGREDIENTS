@@ -18,13 +18,13 @@ body {
     width: calc(100% - 24px);
     max-width: 1200px;
     z-index: 1000;
-    /* Dark green gradient — visible on ALL page backgrounds */
-    background: linear-gradient(135deg, #1a4a1a 0%, #2d6b2d 50%, #1a5c1a 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Premium frosted glass — subtle dark tint for readability on all pages */
+    background: rgba(10, 30, 10, 0.55);
+    backdrop-filter: blur(24px) saturate(1.4);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transition: background 0.35s ease, box-shadow 0.35s ease, top 0.35s ease, border-radius 0.35s ease;
 }
 
@@ -64,6 +64,12 @@ body {
     width: auto;
     display: block;
     object-fit: contain;
+    /* Slight brightness boost so logo pops on the frosted glass */
+    filter: brightness(1.1);
+}
+
+.header-main-div.scrolled .logo-img {
+    filter: none;
     mix-blend-mode: multiply;
 }
 
