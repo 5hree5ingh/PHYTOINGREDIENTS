@@ -18,20 +18,20 @@ body {
     width: calc(100% - 24px);
     max-width: 1200px;
     z-index: 1000;
-    /* Premium frosted glass — subtle dark tint for readability on all pages */
-    background: rgba(10, 30, 10, 0.55);
-    backdrop-filter: blur(24px) saturate(1.4);
-    -webkit-backdrop-filter: blur(24px) saturate(1.4);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Premium bright frosted glass — elegant white with green accents */
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    border: 1px solid rgba(45, 122, 45, 0.1);
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(45, 122, 45, 0.1), 0 1px 3px rgba(45, 122, 45, 0.06);
     transition: background 0.35s ease, box-shadow 0.35s ease, top 0.35s ease, border-radius 0.35s ease;
 }
 
-/* When page is scrolled, make header more opaque — keep same pill shape */
+/* When page is scrolled, make header slightly more opaque */
 .header-main-div.scrolled {
-    background: rgba(255, 255, 255, 0.97);
-    box-shadow: 0 8px 32px rgba(45, 122, 45, 0.18);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 6px 28px rgba(45, 122, 45, 0.14), 0 1px 4px rgba(45, 122, 45, 0.08);
     border: 1px solid rgba(45, 122, 45, 0.12);
 }
 
@@ -64,13 +64,6 @@ body {
     width: auto;
     display: block;
     object-fit: contain;
-    /* Slight brightness boost so logo pops on the frosted glass */
-    filter: brightness(1.1);
-}
-
-.header-main-div.scrolled .logo-img {
-    filter: none;
-    mix-blend-mode: multiply;
 }
 
 .logo-container a {
@@ -91,7 +84,7 @@ body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #1a3d1a;
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -100,18 +93,10 @@ body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     font-size: 0.68rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.8);
+    color: #2d7a2d;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-align: left;
-}
-
-.header-main-div.scrolled .logo-line1 {
-    color: #1a1a1a;
-}
-
-.header-main-div.scrolled .logo-line2 {
-    color: #1a5c1a;
 }
 
 /* ---- Nav Menu ---- */
@@ -129,7 +114,7 @@ body {
 
 .menu-list-item a {
     display: block;
-    color: rgba(255, 255, 255, 0.95);
+    color: #2c5a2c;
     text-decoration: none;
     padding: 7px 9px;
     border-radius: 8px;
@@ -137,24 +122,12 @@ body {
     font-weight: 500;
     transition: all 0.25s ease;
     white-space: nowrap;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .menu-list-item a:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.2);
+    color: #1a5c1a;
+    background: rgba(45, 122, 45, 0.08);
     border-radius: 8px;
-}
-
-/* Scrolled state nav links */
-.header-main-div.scrolled .menu-list-item a {
-    color: #2d3748;
-    text-shadow: none;
-}
-
-.header-main-div.scrolled .menu-list-item a:hover {
-    color: #2d7a2d;
-    background: #e8f5e9;
 }
 
 /* ---- Dropdown ---- */
@@ -165,7 +138,7 @@ body {
 
 .dropbtn {
     background: transparent;
-    color: rgba(255, 255, 255, 0.95);
+    color: #2c5a2c;
     padding: 7px 9px;
     font-size: 0.82rem;
     font-weight: 500;
@@ -179,22 +152,11 @@ body {
     display: inline-flex;
     align-items: center;
     font-family: inherit;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .dropbtn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.header-main-div.scrolled .dropbtn {
-    color: #2d3748;
-    text-shadow: none;
-}
-
-.header-main-div.scrolled .dropbtn:hover {
-    color: #2d7a2d;
-    background: #e8f5e9;
+    color: #1a5c1a;
+    background: rgba(45, 122, 45, 0.08);
 }
 
 .dropdown-content {
@@ -207,7 +169,7 @@ body {
     -webkit-backdrop-filter: blur(20px);
     min-width: 230px;
     border-radius: 14px;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 16px 48px rgba(45, 80, 45, 0.15);
     z-index: 100;
     border: 1px solid rgba(255, 255, 255, 0.4);
     overflow: hidden;
@@ -227,7 +189,7 @@ body {
 }
 
 .dropdown-content a {
-    color: #2d3748;
+    color: #2c5a2c;
     padding: 11px 18px;
     text-decoration: none;
     display: block;
@@ -258,11 +220,11 @@ body {
     gap: 4px;
     margin-left: 10px;
     padding-left: 10px;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(45, 122, 45, 0.15);
 }
 
 .nav-social-icons a {
-    color: rgba(255, 255, 255, 0.9);
+    color: #2c5a2c;
     font-size: 0.95rem;
     width: 30px;
     height: 30px;
@@ -275,21 +237,8 @@ body {
 }
 
 .nav-social-icons a:hover {
-    background: rgba(255, 255, 255, 0.22);
-    color: #ffffff;
-}
-
-.header-main-div.scrolled .nav-social-icons {
-    border-left-color: rgba(45, 122, 45, 0.2);
-}
-
-.header-main-div.scrolled .nav-social-icons a {
-    color: #2d3748;
-}
-
-.header-main-div.scrolled .nav-social-icons a:hover {
-    background: #e8f5e9;
-    color: #2d7a2d;
+    background: rgba(45, 122, 45, 0.08);
+    color: #1a5c1a;
 }
 
 /* ---- Mobile menu ---- */
@@ -354,7 +303,7 @@ body {
     .header-menu-list-container {
         width: 40px;
         height: 36px;
-        border: 1px solid rgba(255, 255, 255, 0.35);
+        border: 1px solid rgba(45, 122, 45, 0.2);
         border-radius: 8px;
         position: absolute;
         right: 16px;
@@ -362,7 +311,7 @@ body {
         padding: 3px;
         overflow: hidden;
         display: inline-block;
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(45, 122, 45, 0.06);
         backdrop-filter: blur(8px);
         transition: all 0.3s ease;
     }
@@ -391,7 +340,6 @@ body {
         position: relative;
         padding: 5px;
         cursor: pointer;
-        filter: brightness(10);
     }
 
     .menu-dropdown {
@@ -401,7 +349,7 @@ body {
         background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(20px);
         border-radius: 14px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        box-shadow: 0 8px 32px rgba(45, 80, 45, 0.15);
         position: absolute;
         right: 0;
         top: calc(100% + 8px);
@@ -411,7 +359,7 @@ body {
     }
 
     .menu-dropdown a {
-        color: #2d3748;
+        color: #2c5a2c;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
