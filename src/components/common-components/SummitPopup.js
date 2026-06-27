@@ -4,20 +4,11 @@ import '../../css-files/summit-popup.css';
 const summits = [
   {
     id: 1,
-    event: 'CPHI & PMEC India 2026',
-    tagline: "South Asia's Largest Pharma Exhibition",
-    location: 'India Expo Centre, Greater Noida',
-    date: 'Nov 26 – 28, 2026',
-    booth: 'Hall 7 · Stall H42',
-    image: '/images/greater-noida-expo.png',
-  },
-  {
-    id: 2,
-    event: 'ChemTECH World Expo 2027',
-    tagline: 'Process, Plant & Equipment Summit',
-    location: 'Bombay Exhibition Centre, Mumbai',
-    date: 'Feb 17 – 20, 2027',
-    booth: 'Hall 1 · Booth A19',
+    event: 'Fi India 2026',
+    tagline: 'Food Ingredients & Health Ingredients Exhibition',
+    location: 'BEC, Goregaon, Mumbai',
+    date: '26th – 28th August, 2026',
+    booth: 'Hall No. 4-A56',
     image: '/images/mumbai-expo.png',
   },
 ];
@@ -40,14 +31,18 @@ class SummitPopup extends Component {
 
     this.showTimer = setTimeout(() => {
       this.setState({ isVisible: true });
-      this.startAutoRotate();
+      if (summits.length > 1) {
+        this.startAutoRotate();
+      }
       sessionStorage.setItem('summitPopupShown', 'true');
     }, 1800);
   }
 
   componentWillUnmount() {
     clearTimeout(this.showTimer);
-    clearInterval(this.autoRotateInterval);
+    if (this.autoRotateInterval) {
+      clearInterval(this.autoRotateInterval);
+    }
   }
 
   startAutoRotate = () => {
@@ -59,13 +54,17 @@ class SummitPopup extends Component {
   };
 
   handleClose = () => {
-    clearInterval(this.autoRotateInterval);
+    if (this.autoRotateInterval) {
+      clearInterval(this.autoRotateInterval);
+    }
     this.setState({ isClosing: true });
     setTimeout(() => this.setState({ isVisible: false }), 450);
   };
 
   goToSlide = (index) => {
-    clearInterval(this.autoRotateInterval);
+    if (this.autoRotateInterval) {
+      clearInterval(this.autoRotateInterval);
+    }
     this.setState({ activeSlide: index });
     this.startAutoRotate();
   };
@@ -158,16 +157,18 @@ class SummitPopup extends Component {
             {/* Footer row */}
             <div className="summit-footer-row">
               <p className="summit-website">www.phytoingredients.co.in</p>
-              <div className="summit-dots">
-                {summits.map((_, i) => (
-                  <button
-                    key={i}
-                    className={`summit-dot ${i === activeSlide ? 'active' : ''}`}
-                    onClick={() => this.goToSlide(i)}
-                    aria-label={`Summit ${i + 1}`}
-                  />
-                ))}
-              </div>
+              {summits.length > 1 && (
+                <div className="summit-dots">
+                  {summits.map((_, i) => (
+                    <button
+                      key={i}
+                      className={`summit-dot ${i === activeSlide ? 'active' : ''}`}
+                      onClick={() => this.goToSlide(i)}
+                      aria-label={`Summit ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
