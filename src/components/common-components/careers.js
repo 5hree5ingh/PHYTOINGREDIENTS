@@ -233,7 +233,7 @@ class Careers extends React.Component {
                 }
               }}
             >
-              Explore Opportunities <IconArrow />
+              View Openings <IconArrow />
             </button>
           </div>
         </section>
