@@ -90,39 +90,36 @@
   font-weight: 300;
 }
 
-.careers-hero-meta {
-  display: flex;
+.careers-hero-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 36px;
-}
-
-.careers-meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.careers-meta-value {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
+  gap: 10px;
+  background: transparent;
   color: #ffffff;
-}
-
-.careers-meta-key {
-  font-size: 0.68rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  padding: 14px 32px;
+  font-size: 0.8rem;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.careers-meta-divider {
-  width: 1px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.1);
+.careers-hero-btn:hover {
+  background: #ffffff;
+  color: #0d2410;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.careers-hero-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.careers-hero-btn:hover svg {
+  transform: translateX(4px);
 }
 
 /* ---------- Positions Section ---------- */
@@ -511,11 +508,6 @@
 
   .careers-hero h1 {
     font-size: 2.4rem;
-  }
-
-  .careers-hero-meta {
-    flex-wrap: wrap;
-    gap: 24px;
   }
 
   .careers-positions {

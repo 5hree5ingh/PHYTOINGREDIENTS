@@ -224,27 +224,22 @@ class Careers extends React.Component {
               and nutraceutical markets. We're looking for professionals who take
               their work seriously.
             </p>
-            <div className="careers-hero-meta">
-              <div className="careers-meta-item">
-                <span className="careers-meta-value">{jobs.length}</span>
-                <span className="careers-meta-key">Open Roles</span>
-              </div>
-              <span className="careers-meta-divider" />
-              <div className="careers-meta-item">
-                <span className="careers-meta-value">Haridwar</span>
-                <span className="careers-meta-key">Location</span>
-              </div>
-              <span className="careers-meta-divider" />
-              <div className="careers-meta-item">
-                <span className="careers-meta-value">Full-time</span>
-                <span className="careers-meta-key">Employment</span>
-              </div>
-            </div>
+            <button
+              className="careers-hero-btn"
+              onClick={() => {
+                const element = document.getElementById('open-positions-section');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Explore Opportunities <IconArrow />
+            </button>
           </div>
         </section>
 
         {/* Positions */}
-        <section className="careers-positions">
+        <section className="careers-positions" id="open-positions-section">
           <div className="careers-section-header">
             <div>
               <div className="careers-section-label">Phyto Ingredients Biopharma</div>
