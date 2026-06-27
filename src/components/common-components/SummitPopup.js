@@ -11,6 +11,15 @@ const summits = [
     booth: 'Hall No. 4-A56',
     image: '/images/mumbai-expo.png',
   },
+  {
+    id: 2,
+    event: 'BIOFACH India 2026',
+    tagline: 'In Collaboration with Spices Board India',
+    location: 'India Expo Centre & Mart (IEML), Greater Noida',
+    date: 'August 6 – 8, 2026',
+    booth: 'Stall Details Coming Soon',
+    image: '/images/greater-noida-expo.png',
+  },
 ];
 
 class SummitPopup extends Component {
