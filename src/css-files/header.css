@@ -48,6 +48,7 @@ body {
     padding: 0 28px;
     height: 60px;
     background: transparent;
+    position: relative;
 }
 
 /* ---- Logo ---- */
@@ -105,8 +106,10 @@ body {
     align-items: center;
     gap: 0px;
     font-weight: 600;
-    flex-grow: 1;
-    margin-left: 48px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .menu-list-item {
@@ -217,10 +220,13 @@ body {
 
 /* ---- Social icons in nav ---- */
 .nav-social-icons {
+    position: absolute;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-left: auto;
     padding-left: 10px;
     border-left: 1px solid rgba(45, 122, 45, 0.15);
 }
@@ -316,6 +322,8 @@ body {
         background: rgba(45, 122, 45, 0.06);
         backdrop-filter: blur(8px);
         transition: all 0.3s ease;
+        left: auto;
+        transform: none;
     }
 
     .header-menu-list-container:hover {

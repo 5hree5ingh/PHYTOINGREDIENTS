@@ -88,20 +88,6 @@ class Header extends React.Component {
                         <div className="menu-list-item">
                             <a href="/careers" style={{ color: '#2d7a2d', fontWeight: '700' }}>Careers</a>
                         </div>
-
-                        {/* Social Icons */}
-                        <div className="nav-social-icons">
-                            <a href="https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/" target="_blank" rel="noopener noreferrer" title="Facebook">
-                                <i className="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-                                <i className="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                                <i className="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </div>
-
                         {/* Mobile hamburger */}
                         <img src="/images/menu.png" alt="menu" id="menu-image" />
                         <div className="menu-dropdown">
@@ -109,6 +95,19 @@ class Header extends React.Component {
                                 <a key={i} href={value.link}>{value.list_value}</a>
                             ))}
                         </div>
+                    </div>
+
+                    {/* Social Icons */}
+                    <div className="nav-social-icons">
+                        <a href="https://www.facebook.com/Phyto-Ingredients-Biopharma-Private-Limited-103242694379030/" target="_blank" rel="noopener noreferrer" title="Facebook">
+                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                            <i className="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/phyto-ingredients-biopharma-private-limited" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <i className="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
