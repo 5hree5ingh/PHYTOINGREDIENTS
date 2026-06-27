@@ -11,7 +11,8 @@ class Header extends React.Component {
                 { list_value: 'About Us', link: '/about-us' },
                 { list_value: 'Our Certifications', link: '/#/contact-form' },
                 { list_value: 'Infrastructure', link: '/infrastructure' },
-                { list_value: 'Contact Us', link: '/contact-form' }
+                { list_value: 'Contact Us', link: '/contact-form' },
+                { list_value: 'Careers', link: '/careers' }
             ],
             productList: [
                 { content: 'Essential Oils', link: '/essential-oil' },
@@ -87,6 +88,9 @@ class Header extends React.Component {
                         </div>
                         <div className="menu-list-item">
                             <a href="/contact-form">Contact Us</a>
+                        </div>
+                        <div className="menu-list-item">
+                            <a href="/careers" style={{ color: '#2d7a2d', fontWeight: '700' }}>Careers</a>
                         </div>
 
                         {/* Social Icons */}

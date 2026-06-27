@@ -23,12 +23,15 @@ import Curcumin95 from './components/products-services/ppcurcumin95';
 import Curcumin30 from './components/products-services/ppcurcumin30';
 import Gymnema from './components/products-services/gymnemasylvestre';
 import SprayDriedFruitsandVegetablePowders from './components/products-services/spray-dried-fruits-and-vegetable-powders';
+import SummitPopup from './components/common-components/SummitPopup';
+import Careers from './components/common-components/careers';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
+          <SummitPopup />
           <Header />  
           <Header2 />
           <Route path="/" component={Homepage} exact />
@@ -49,6 +52,7 @@ class App extends Component {
           <Route path='/curcumin95' component={Curcumin95} exact />
           <Route path='/curcumin30' component={Curcumin30} exact />
           <Route path='/gymnema' component={Gymnema} exact />
+          <Route path='/careers' component={Careers} exact />
           <Footer />
         </div>
       </Router>

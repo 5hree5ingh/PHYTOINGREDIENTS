@@ -14,6 +14,7 @@ class Footer extends React.Component {
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/standardized-herbal-extracts' style={{ textDecoration: "none", color: 'white', marginLeft: '8px', fontSize: '.9rem' }}>Standardized Herbal Extracts</a></div>
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/oleoresines' style={{ textDecoration: "none", color: 'white', marginLeft: '8px', fontSize: '.9rem' }}>Oleoresine's</a></div>
                         <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/essential-oil' style={{ textDecoration: "none", color: 'white', marginLeft: '8px', fontSize: '.9rem' }}>Essential Oils</a></div>
+                        <div><i class="fa fa-chevron-right" aria-hidden="true"></i><a href='/careers' style={{ textDecoration: "none", color: '#90ee90', marginLeft: '8px', fontSize: '.9rem', fontWeight: '700' }}>Careers</a></div>
                     </div>
                     <div className='footer-div'>
                         <div className='footer-address'>

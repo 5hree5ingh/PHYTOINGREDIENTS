@@ -1,0 +1,537 @@
+/* ============================================================
+   CAREERS PAGE — PREMIUM / LUXURY
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ---------- Page shell ---------- */
+.careers-page {
+  min-height: 100vh;
+  background: #fafafa;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ---------- Hero ---------- */
+.careers-hero {
+  position: relative;
+  background: #0d2410;
+  padding: 160px 8% 100px;
+  overflow: hidden;
+}
+
+.careers-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 120%, rgba(45, 122, 45, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 85% 20%, rgba(76, 175, 80, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.careers-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(45, 122, 45, 0.4), transparent);
+}
+
+.careers-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 740px;
+}
+
+.careers-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.careers-hero-line {
+  width: 32px;
+  height: 1px;
+  background: #4caf50;
+}
+
+.careers-hero-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #4caf50;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.careers-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 24px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.careers-hero h1 em {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.careers-hero-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  margin: 0 0 56px;
+  max-width: 520px;
+  font-weight: 300;
+}
+
+.careers-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 36px;
+}
+
+.careers-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.careers-meta-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.careers-meta-key {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.careers-meta-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Positions Section ---------- */
+.careers-positions {
+  padding: 90px 8% 100px;
+  background: #fafafa;
+}
+
+.careers-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 28px;
+}
+
+.careers-section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #2d7a2d;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.careers-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0d2410;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.careers-open-count {
+  font-size: 0.78rem;
+  color: #999;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ---------- Job List ---------- */
+.careers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ---------- Job Row ---------- */
+.career-row {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.career-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #2d7a2d;
+  transform: scaleY(0);
+  transition: transform 0.25s ease;
+  transform-origin: bottom;
+  z-index: 2;
+}
+
+.career-row:hover {
+  border-color: rgba(45, 122, 45, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.career-row:hover::before {
+  transform: scaleY(1);
+}
+
+.career-row.expanded {
+  border-color: rgba(45, 122, 45, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.career-row.expanded::before {
+  transform: scaleY(1);
+}
+
+/* Summary row (always visible) */
+.career-row-summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 36px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.career-row-left {
+  min-width: 0;
+}
+
+.career-row-dept {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #2d7a2d;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.career-row-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0d2410;
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+
+.career-row-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.career-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #555;
+  background: #f4f4f4;
+  border: 1px solid #e8e8e8;
+}
+
+.career-tag svg {
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* Toggle chevron */
+.career-row-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  background: #f8f8f8;
+}
+
+.career-row:hover .career-row-toggle {
+  color: #2d7a2d;
+  background: rgba(45, 122, 45, 0.06);
+}
+
+/* ---------- Expandable Detail Panel ---------- */
+.career-detail-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.career-detail-panel.open {
+  max-height: 1200px;
+}
+
+.career-detail-inner {
+  padding: 0 36px 36px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+}
+
+.career-detail-block {
+  min-width: 0;
+}
+
+.career-detail-block h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #0d2410;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.career-detail-block p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+}
+
+.career-detail-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.career-detail-block ul li {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.6;
+  padding: 5px 0 5px 16px;
+  position: relative;
+  font-weight: 400;
+}
+
+.career-detail-block ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2d7a2d;
+  opacity: 0.5;
+}
+
+/* Detail actions */
+.career-detail-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ---------- Buttons ---------- */
+.career-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.22s ease;
+  letter-spacing: 0.3px;
+}
+
+.career-btn-primary {
+  background: #0d2410;
+  color: #ffffff;
+  border: 1px solid #0d2410;
+}
+
+.career-btn-primary:hover {
+  background: #2d7a2d;
+  border-color: #2d7a2d;
+}
+
+.career-btn-ghost {
+  background: transparent;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.career-btn-ghost:hover {
+  border-color: #2d7a2d;
+  color: #2d7a2d;
+}
+
+/* ---------- Bottom CTA ---------- */
+.careers-bottom {
+  background: #0d2410;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.careers-bottom-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.careers-bottom-text p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.careers-bottom-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.careers-bottom-email:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(76, 175, 80, 0.4);
+}
+
+.careers-bottom-email svg {
+  opacity: 0.6;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .careers-hero {
+    padding: 130px 6% 80px;
+  }
+
+  .career-row-summary {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 24px;
+  }
+
+  .career-row-toggle {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+  }
+
+  .career-detail-inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px 28px;
+    padding-top: 24px;
+    gap: 22px;
+  }
+
+  .career-detail-actions {
+    flex-direction: column;
+  }
+
+  .careers-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .careers-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .careers-hero {
+    padding: 120px 5% 60px;
+  }
+
+  .careers-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .careers-hero-meta {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .careers-positions {
+    padding: 60px 5% 80px;
+  }
+
+  .career-row-summary {
+    padding: 20px 18px;
+  }
+
+  .career-detail-inner {
+    padding: 0 18px 22px;
+    padding-top: 20px;
+  }
+
+  .career-btn {
+    width: 100%;
+  }
+}
