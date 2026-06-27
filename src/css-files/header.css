@@ -105,6 +105,8 @@ body {
     align-items: center;
     gap: 0px;
     font-weight: 600;
+    flex-grow: 1;
+    margin-left: 48px;
 }
 
 .menu-list-item {
@@ -218,7 +220,7 @@ body {
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-left: 10px;
+    margin-left: auto;
     padding-left: 10px;
     border-left: 1px solid rgba(45, 122, 45, 0.15);
 }
