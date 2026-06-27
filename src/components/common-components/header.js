@@ -57,10 +57,6 @@ class Header extends React.Component {
                                 alt="Phyto Ingredients"
                                 className="logo-img"
                             />
-                            <span className="logo-brand-name">
-                                <span className="logo-line1">PHYTO INGREDIENTS</span>
-                                <span className="logo-line2">BIOPHARMA</span>
-                            </span>
                         </a>
                     </div>
 
