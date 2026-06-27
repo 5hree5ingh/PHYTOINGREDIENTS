@@ -53,7 +53,7 @@ class Header extends React.Component {
                     <div className="logo-container">
                         <a href='/'>
                             <img
-                                src="/images/phytologo.png"
+                                src="/images/image.png"
                                 alt="Phyto Ingredients"
                                 className="logo-img"
                             />

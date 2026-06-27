@@ -120,7 +120,7 @@ class SummitPopup extends Component {
             {/* Logo */}
             <div className="summit-logo-area">
               <img
-                src="/images/phyto-logo.png"
+                src="/images/image.png"
                 alt="Phyto Ingredients"
                 className="summit-logo-img"
               />
