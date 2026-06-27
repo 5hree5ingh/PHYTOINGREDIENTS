@@ -17,8 +17,13 @@
   background: #0d2410;
   padding: 160px 8% 100px;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 }
 
+/* Subtle texture overlay */
 .careers-hero::before {
   content: '';
   position: absolute;
@@ -29,6 +34,7 @@
   pointer-events: none;
 }
 
+/* Diagonal accent line */
 .careers-hero::after {
   content: '';
   position: absolute;
@@ -43,6 +49,7 @@
   position: relative;
   z-index: 2;
   max-width: 740px;
+  width: 100%;
 }
 
 .careers-hero-eyebrow {
