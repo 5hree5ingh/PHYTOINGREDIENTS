@@ -1,75 +1,66 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
-const StyledTableCell = withStyles(theme => ({
-  head: {
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
     background: 'linear-gradient(135deg, #1a5c1a 0%, #2d7a2d 100%)',
     color: theme.palette.common.white,
     fontFamily: "'Inter', sans-serif",
     fontSize: 13,
     letterSpacing: '0.3px',
   },
-  body: {
+  [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
     fontFamily: "'Inter', sans-serif",
     color: '#4a5568',
   },
-}))(TableCell);
+}));
 
-const StyledTableRow = withStyles(theme => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: '#f8fdf8',
-    },
-    '&:hover': {
-      backgroundColor: '#e8f5e9',
-      transition: 'background-color 0.2s ease',
-    },
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: '#f8fdf8',
   },
-}))(TableRow);
+  '&:hover': {
+    backgroundColor: '#e8f5e9',
+    transition: 'background-color 0.2s ease',
+  },
+}));
 
-const useStyles = makeStyles(theme => ({
-  root: {
+export default function CustomizedTables(props) {
+  return (
+    <Paper
+      sx={{
         marginLeft: '5%',
         width: '90%',
-        marginTop: theme.spacing(3),
+        marginTop: 3,
         marginBottom: '50px',
         overflowX: 'auto',
         border: '1px solid rgba(45, 122, 45, 0.12)',
         borderRadius: '16px',
         boxShadow: '0 8px 24px rgba(45, 122, 45, 0.12)',
-  },
-  table: {
-    minWidth: 700,
-  },
-}));
-
-export default function CustomizedTables(props) {
-  const classes = useStyles();
-
-  return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+      }}
+    >
+      <Table sx={{ minWidth: 700 }}>
         <TableHead>
           <TableRow>
               {
-                  props.head.map(val => (
-                    <StyledTableCell style={{fontWeight:'bold'}}>{val}</StyledTableCell> 
+                  props.head.map((val, i) => (
+                    <StyledTableCell key={i} style={{fontWeight:'bold'}}>{val}</StyledTableCell> 
                   ))
               }
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.rows.map(row => (
-            <StyledTableRow>
-                {row.map(val => (
-                    <StyledTableCell>{val}</StyledTableCell>
+          {props.rows.map((row, i) => (
+            <StyledTableRow key={i}>
+                {row.map((val, j) => (
+                    <StyledTableCell key={j}>{val}</StyledTableCell>
                 ))}
             </StyledTableRow>
           ))}

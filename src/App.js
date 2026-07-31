@@ -1,6 +1,5 @@
-
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/common-components/header';
 import Header2 from './components/common-components/header2';
 import Homepage from './components/homepage-component/homepage';
@@ -25,39 +24,55 @@ import Gymnema from './components/products-services/gymnemasylvestre';
 import SprayDriedFruitsandVegetablePowders from './components/products-services/spray-dried-fruits-and-vegetable-powders';
 import SummitPopup from './components/common-components/SummitPopup';
 import Careers from './components/common-components/careers';
+import Certifications from './components/common-components/certifications';
+import Brochure from './components/common-components/Brochure';
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <SummitPopup />
-          <Header />  
-          <Header2 />
-          <Route path="/" component={Homepage} exact />
-          <Route path='/essential-oil' component={EssentialOil} exact/>
-          <Route path='/standardized-herbal-extracts' component={Standardized} exact/>
-          <Route path='/cosmoceutical-herbal-products' component={Cosmoceutical} exact/>
-          <Route path='/phytochemical' component={Phytochemical} exact/>
-          <Route path='/oleoresines' component={Oleoresines} exact/>
-          <Route path='/spray-dried-fruits-and-vegetable-powders' component={SprayDriedFruitsandVegetablePowders} exact/>
-          <Route path='/contact-form' component={ContractManufacturing} exact/>
-          <Route path='/about-us' component={AboutUs} exact/>
-          <Route path='/infrastructure' component={Infrastructure} exact/>
-          <Route path='/events-news' component={NewsAndEventsComponents} exact/>
-          <Route path='/product-developement' component={ProductDevelopement} exact/>
-          <Route path='/project-management' component={ProjectManagement} exact/>
-          <Route path='/akba' component={Akba} exact />
-          <Route path='/ginseng' component={Ginseng} exact />
-          <Route path='/curcumin95' component={Curcumin95} exact />
-          <Route path='/curcumin30' component={Curcumin30} exact />
-          <Route path='/gymnema' component={Gymnema} exact />
-          <Route path='/careers' component={Careers} exact />
-          <Footer />
-        </div>
-      </Router>
-    );
-  }
+/* Routes that render without the global header / footer */
+const FULLSCREEN_ROUTES = ['/brochure'];
+
+function AppLayout() {
+  const { pathname } = useLocation();
+  const isFullscreen = FULLSCREEN_ROUTES.includes(pathname);
+
+  return (
+    <div className="App">
+      {!isFullscreen && <SummitPopup />}
+      {!isFullscreen && <Header />}
+      {!isFullscreen && <Header2 />}
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/essential-oil" element={<EssentialOil />} />
+        <Route path="/standardized-herbal-extracts" element={<Standardized />} />
+        <Route path="/cosmoceutical-herbal-products" element={<Cosmoceutical />} />
+        <Route path="/phytochemical" element={<Phytochemical />} />
+        <Route path="/oleoresines" element={<Oleoresines />} />
+        <Route path="/spray-dried-fruits-and-vegetable-powders" element={<SprayDriedFruitsandVegetablePowders />} />
+        <Route path="/contact-form" element={<ContractManufacturing />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/infrastructure" element={<Infrastructure />} />
+        <Route path="/events-news" element={<NewsAndEventsComponents />} />
+        <Route path="/product-developement" element={<ProductDevelopement />} />
+        <Route path="/project-management" element={<ProjectManagement />} />
+        <Route path="/akba" element={<Akba />} />
+        <Route path="/ginseng" element={<Ginseng />} />
+        <Route path="/curcumin95" element={<Curcumin95 />} />
+        <Route path="/curcumin30" element={<Curcumin30 />} />
+        <Route path="/gymnema" element={<Gymnema />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/certifications" element={<Certifications />} />
+        <Route path="/brochure" element={<Brochure />} />
+      </Routes>
+      {!isFullscreen && <Footer />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppLayout />
+    </Router>
+  );
 }
 
 export default App;

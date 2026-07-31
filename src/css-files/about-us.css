@@ -3,60 +3,272 @@
    Premium Redesign — matches homepage green luxury theme
    ============================================================ */
 
-/* ---- About Us Page ---- */
-.about-us-container {
-    padding: 100px 8% 80px;
-    background: var(--white);
-    animation: aboutFadeIn 0.7s ease both;
+/* ---- About Us Page (New Premium Style) ---- */
+.about-page {
+    min-height: 100vh;
+    background: #fafaf8;
+    font-family: 'Inter', sans-serif;
 }
 
-@keyframes aboutFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.about-us-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 700;
-    color: var(--text-dark, #1a2e1a);
-    text-align: left;
-    margin: 48px 0 12px 0;
+/* ── HERO BANNER ── */
+.about-hero {
     position: relative;
-    padding-bottom: 14px;
-    letter-spacing: -0.3px;
+    height: 380px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-us-heading::after {
-    content: '';
+.about-hero-bg {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.03);
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 45, 10, 0.85) 0%,
+        rgba(30, 70, 30, 0.70) 100%
+    );
+    z-index: 1;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 24px;
+}
+
+.about-hero-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    font-weight: 700;
+    margin: 0 0 16px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    line-height: 1.15;
+}
+
+.about-hero-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.80);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* ── INTRO GRID SECTION ── */
+.about-intro-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-intro-left {
+    text-align: left;
+}
+
+.about-section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a2e1a;
+    margin: 0 0 16px;
+}
+
+.about-accent-line {
     width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--green-primary, #2d7a2d), var(--green-light, #4caf50));
+    height: 3px;
+    background: #2d7a2d;
+    margin-bottom: 32px;
     border-radius: 2px;
 }
 
-.about-us-heading:first-of-type {
-    margin-top: 0;
+.about-body-text {
+    font-size: 0.95rem;
+    color: #5a6e5a;
+    line-height: 1.85;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
-.about-us-para {
+.about-body-text.highlighted {
+    font-size: 1.1rem;
+    color: #1c361c;
+    line-height: 1.75;
+    font-weight: 500;
+}
+
+/* Stats Right Card */
+.about-intro-right {
+    display: flex;
+    justify-content: center;
+}
+
+.about-stats-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #eaeeea;
+    border-radius: 20px;
+    padding: 44px 36px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     width: 100%;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: var(--text-mid, #4a5568);
-    text-align: justify;
-    line-height: 1.85;
+    max-width: 380px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.about-stats-bg-leaf {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 12rem;
+    color: rgba(45, 122, 45, 0.03);
+    pointer-events: none;
+}
+
+.about-stats-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a2e1a;
+    margin: 0 0 4px;
+}
+
+.about-stats-card-subtitle {
+    font-size: 0.72rem;
+    color: #81c784;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.about-stat-row {
+    border-bottom: 1px solid #f0f4f0;
+    padding: 16px 0;
+}
+
+.about-stat-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.about-stat-row:first-of-type {
+    padding-top: 0;
+}
+
+.about-stat-num {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d7a2d;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.about-stat-label {
+    font-size: 0.8rem;
+    color: #5a6e5a;
+    font-weight: 500;
+}
+
+/* ── MISSION & VISION CARDS ── */
+.about-mission-vision-section {
+    background: #f4f6f4;
+    padding: 80px 24px;
+}
+
+.about-cards-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.about-mv-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 44px 38px;
+    border: 1px solid #eaeeea;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.about-mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.about-mv-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(45, 122, 45, 0.08);
+    color: #2d7a2d;
+    margin-bottom: 24px;
+}
+
+.about-mv-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #1a2e1a;
+    margin: 0 0 16px;
+}
+
+.about-mv-text {
+    font-size: 0.9rem;
+    color: #5a6e5a;
+    line-height: 1.8;
     margin-bottom: 16px;
-    font-weight: 400;
+    text-align: justify;
+}
+
+.about-mv-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- Responsive Styles ---- */
+@media only screen and (max-width: 960px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .about-intro-right {
+        order: -1;
+    }
+    .about-stats-card {
+        max-width: 100%;
+    }
+    .about-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 /* ---- Infrastructure / Business Development Page ---- */

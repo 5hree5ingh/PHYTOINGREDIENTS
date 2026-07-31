@@ -1,7 +1,6 @@
 import React from 'react';
 
-class ProjectProductDevelopement extends React.Component{
-render(){
+function ProjectProductDevelopement() {
     return (
         <div className='product-dev-container' >
             <h5>CONSULTANT FOR PRODUCT DEVELOPMENT</h5>
@@ -9,9 +8,7 @@ render(){
             <p><strong>YOUR GOAL:</strong> To create value for your company by offering innovative products that solve customer problems.</p>
             <p><strong>OUR GOAL:</strong> To help you enrich your portfolio with products that yield bottom-line growth.</p>
         </div>
-    )
-}
-
+    );
 }
 
 export default ProjectProductDevelopement;

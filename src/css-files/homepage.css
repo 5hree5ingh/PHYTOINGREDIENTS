@@ -560,94 +560,236 @@ body {
 }
 
 /* ============================================================
-   LEGACY COMPATIBILITY (for research-and-projects component)
+   RESEARCH & PROJECTS — New Section Layout (rp-section-*)
    ============================================================ */
 
-.research-and-event-container {
-    width: 100%;
-    height: auto;
-}
-
-.research-and-event-inner-container {
-    width: 100%;
-    height: auto;
+.rp-section-wrapper {
     display: flex;
+    flex-direction: column;
+    gap: 56px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.research-container {
-    width: 50%;
-    height: auto;
-    padding: 5px 5% 5px 5%;
-    border-right: 2px solid #e2e8f0;
-}
-
-.event-container {
-    width: 50%;
-    height: auto;
-    padding: 5px 5% 5px 5%;
-}
-
-.event-component-container {
+/* Block: shared wrapper for each sub-section */
+.rp-block {
     width: 100%;
-    height: 112px;
-    border: 1px solid #f0f0f0;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06);
-    margin-bottom: 10px;
-    border-radius: var(--radius-sm);
+}
+
+.rp-block-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #e8f0e8;
+    color: var(--green-primary);
+}
+
+.rp-block-header svg {
+    flex-shrink: 0;
+    color: var(--green-primary);
+}
+
+.rp-block-header h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--green-primary);
+    margin: 0;
+}
+
+/* ── Research Paper Cards ── */
+.rp-research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.rp-research-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #eaeeea;
     overflow: hidden;
-    transition: var(--transition);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.32s cubic-bezier(0.34, 1.36, 0.64, 1),
+                box-shadow 0.32s ease,
+                border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.event-component-container:hover {
-    box-shadow: var(--shadow-md);
-    border-color: rgba(45, 122, 45, 0.2);
+.rp-research-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+    border-color: rgba(45, 122, 45, 0.28);
 }
 
-.event-component-container-project {
-    width: 100%;
-    height: 112px;
-    border: 1px solid #f0f0f0;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06);
-    margin-bottom: 10px;
-    border-radius: var(--radius-sm);
+.rp-research-card-img {
+    position: relative;
+    height: 160px;
     overflow: hidden;
-    position: relative;
-    transition: var(--transition);
+    flex-shrink: 0;
 }
 
-.event-component-container-project:hover {
-    background: var(--green-pale);
-    border-color: var(--green-light);
-}
-
-.event-image-container {
-    width: 30%;
-    height: 100%;
-    position: relative;
-}
-
-.event-image-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.event-summary-container {
-    width: 70%;
-    height: 100%;
-    padding: 1% 5% 1% 5%;
-}
-
-.event-discription-container {
-    height: 30%;
-    text-align: justify;
-}
-
-.our-research-img {
+.rp-research-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: var(--radius-sm);
+    transition: transform 0.45s ease;
+}
+
+.rp-research-card:hover .rp-research-card-img img {
+    transform: scale(1.08);
+}
+
+.rp-research-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--green-primary);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.rp-research-card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rp-research-card-body h4 {
+    font-size: 0.93rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 8px;
+    line-height: 1.35;
+}
+
+.rp-research-card-body p {
+    font-size: 0.81rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin: 0 0 16px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rp-research-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.77rem;
+    font-weight: 700;
+    color: var(--green-primary);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: gap 0.25s ease, color 0.25s ease, background 0.25s ease;
+    align-self: flex-start;
+    padding: 7px 16px;
+    border: 2px solid var(--green-primary);
+    border-radius: 50px;
+}
+
+.rp-research-cta:hover {
+    background: var(--green-primary);
+    color: #fff;
+    gap: 10px;
+}
+
+/* ── Consultancy Service Cards ── */
+.rp-consult-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.rp-consult-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #eaeeea;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.32s cubic-bezier(0.34, 1.36, 0.64, 1),
+                box-shadow 0.32s ease,
+                border-color 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.rp-consult-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+    border-color: rgba(45, 122, 45, 0.28);
+}
+
+.rp-consult-card-img {
+    height: 180px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.rp-consult-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.rp-consult-card:hover .rp-consult-card-img img {
+    transform: scale(1.08);
+}
+
+.rp-consult-card-body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rp-consult-card-body h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.rp-consult-card-body p {
+    font-size: 0.83rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin: 0 0 16px;
+    flex: 1;
+}
+
+.rp-consult-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.77rem;
+    font-weight: 700;
+    color: var(--green-primary);
+    letter-spacing: 0.3px;
+    transition: gap 0.25s ease, color 0.25s ease;
+    align-self: flex-start;
+}
+
+.rp-consult-card:hover .rp-consult-cta {
+    gap: 10px;
+    color: var(--green-dark);
 }
 
 /* ============================================================
@@ -656,6 +798,11 @@ body {
 
 @media only screen and (max-width: 1024px) {
     .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rp-research-grid,
+    .rp-consult-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -711,6 +858,15 @@ body {
 
     .event-container {
         border-bottom: none;
+    }
+
+    .rp-research-grid,
+    .rp-consult-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rp-section-wrapper {
+        gap: 40px;
     }
 }
 

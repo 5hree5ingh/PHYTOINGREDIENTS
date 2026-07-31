@@ -1,7 +1,6 @@
 import React from 'react';
 
-class ProjectManagement extends React.Component{
-render(){
+function ProjectManagement() {
     return (
         <div className='product-dev-container' >
             <h5>CONSULTANT FOR PROJECT MANAGEMENT</h5>
@@ -12,19 +11,15 @@ render(){
                 <li>DeCivil & Structuralsign</li>
                 <li>Clean Rooms</li>
                 <li>HVAC</li>
-                <li>Process Equipment’s</li>
+                <li>Process Equipment's</li>
                 <li>DeElectricalsign</li>
                 <li>Process Piping</li>
                 <li>Utility Piping</li>
                 <li>Fire system</li>
-                <li>SS equipment’s and accessories</li>
-
+                <li>SS equipment's and accessories</li>
             </ul>
         </div>
-    )
-}
-
+    );
 }
 
 export default ProjectManagement;
-

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../css-files/careers.css';
 
 const jobs = [
@@ -186,176 +186,160 @@ const IconChevron = ({ open }) => (
   </svg>
 );
 
-class Careers extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      expandedId: null,
-    };
-  }
+function Careers() {
+  const [expandedId, setExpandedId] = useState(null);
+  const email = 'phytoingredients@gmail.com';
+  const whatsapp = '918840804180';
 
-  toggleExpand = (id) => {
-    this.setState((prev) => ({
-      expandedId: prev.expandedId === id ? null : id,
-    }));
+  const toggleExpand = (id) => {
+    setExpandedId((prev) => (prev === id ? null : id));
   };
 
-  render() {
-    const email = 'phytoingredients@gmail.com';
-    const whatsapp = '918840804180';
-    const { expandedId } = this.state;
+  return (
+    <div className="careers-page">
 
-    return (
-      <div className="careers-page">
+      {/* Hero */}
+      <section className="careers-hero">
+        <div className="careers-hero-inner">
+          <h1>
+            Build something<br /><em>that matters.</em>
+          </h1>
+          <p className="careers-hero-desc">
+            Phyto Ingredients Biopharma is growing. We manufacture high-quality
+            herbal extracts, phytochemicals, and essential oils for global pharma
+            and nutraceutical markets. We're looking for professionals who take
+            their work seriously.
+          </p>
+          <button
+            className="careers-hero-btn"
+            onClick={() => {
+              const element = document.getElementById('open-positions-section');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            View Openings <IconArrow />
+          </button>
+        </div>
+      </section>
 
-        {/* Hero */}
-        <section className="careers-hero">
-          <div className="careers-hero-inner">
-            <div className="careers-hero-eyebrow">
-              <span className="careers-hero-line" />
-              <span className="careers-hero-label">Current Openings</span>
-            </div>
-            <h1>
-              Build something<br /><em>that matters.</em>
-            </h1>
-            <p className="careers-hero-desc">
-              Phyto Ingredients Biopharma is growing. We manufacture high-quality
-              herbal extracts, phytochemicals, and essential oils for global pharma
-              and nutraceutical markets. We're looking for professionals who take
-              their work seriously.
-            </p>
-            <button
-              className="careers-hero-btn"
-              onClick={() => {
-                const element = document.getElementById('open-positions-section');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              View Openings <IconArrow />
-            </button>
+      {/* Positions */}
+      <section className="careers-positions" id="open-positions-section">
+        <div className="careers-section-header">
+          <div>
+            <h2 className="careers-section-title">Open Positions</h2>
           </div>
-        </section>
+          <span className="careers-open-count">{jobs.length} positions available</span>
+        </div>
 
-        {/* Positions */}
-        <section className="careers-positions" id="open-positions-section">
-          <div className="careers-section-header">
-            <div>
-              <div className="careers-section-label">Phyto Ingredients Biopharma</div>
-              <h2 className="careers-section-title">Open Positions</h2>
-            </div>
-            <span className="careers-open-count">{jobs.length} positions available</span>
-          </div>
-
-          <div className="careers-list">
-            {jobs.map((job) => {
-              const isOpen = expandedId === job.id;
-              return (
-                <div className={`career-row ${isOpen ? 'expanded' : ''}`} key={job.id}>
-                  {/* Summary row */}
-                  <div className="career-row-summary" onClick={() => this.toggleExpand(job.id)}>
-                    <div className="career-row-left">
-                      <div className="career-row-dept">{job.dept}</div>
-                      <h3 className="career-row-title">{job.title}</h3>
-                      <div className="career-row-tags">
-                        <span className="career-tag"><IconLocation /> {job.location}</span>
-                        <span className="career-tag"><IconBriefcase /> {job.type}</span>
-                        <span className="career-tag"><IconUser /> {job.experience}</span>
-                      </div>
-                    </div>
-                    <div className="career-row-toggle">
-                      <IconChevron open={isOpen} />
+        <div className="careers-list">
+          {jobs.map((job) => {
+            const isOpen = expandedId === job.id;
+            return (
+              <div className={`career-row ${isOpen ? 'expanded' : ''}`} key={job.id}>
+                {/* Summary row */}
+                <div className="career-row-summary" onClick={() => toggleExpand(job.id)}>
+                  <div className="career-row-left">
+                    <div className="career-row-dept">{job.dept}</div>
+                    <h3 className="career-row-title">{job.title}</h3>
+                    <div className="career-row-tags">
+                      <span className="career-tag"><IconLocation /> {job.location}</span>
+                      <span className="career-tag"><IconBriefcase /> {job.type}</span>
+                      <span className="career-tag"><IconUser /> {job.experience}</span>
                     </div>
                   </div>
+                  <div className="career-row-toggle">
+                    <IconChevron open={isOpen} />
+                  </div>
+                </div>
 
-                  {/* Expandable detail */}
-                  <div className={`career-detail-panel ${isOpen ? 'open' : ''}`}>
-                    <div className="career-detail-inner">
-                      {/* Qualification */}
+                {/* Expandable detail */}
+                <div className={`career-detail-panel ${isOpen ? 'open' : ''}`}>
+                  <div className="career-detail-inner">
+                    {/* Qualification */}
+                    <div className="career-detail-block">
+                      <h4>Qualification</h4>
+                      <p>{job.qualification}</p>
+                    </div>
+
+                    {/* Responsibilities */}
+                    <div className="career-detail-block">
+                      <h4>Responsibilities</h4>
+                      <ul>
+                        {job.responsibilities.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Skills */}
+                    <div className="career-detail-block">
+                      <h4>Required Skills</h4>
+                      <ul>
+                        {job.skills.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Preferred */}
+                    {job.preferred && (
                       <div className="career-detail-block">
-                        <h4>Qualification</h4>
-                        <p>{job.qualification}</p>
+                        <h4>Preferred Candidates</h4>
+                        <p>{job.preferred}</p>
                       </div>
+                    )}
 
-                      {/* Responsibilities */}
-                      <div className="career-detail-block">
-                        <h4>Responsibilities</h4>
-                        <ul>
-                          {job.responsibilities.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Skills */}
-                      <div className="career-detail-block">
-                        <h4>Required Skills</h4>
-                        <ul>
-                          {job.skills.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Preferred */}
-                      {job.preferred && (
-                        <div className="career-detail-block">
-                          <h4>Preferred Candidates</h4>
-                          <p>{job.preferred}</p>
-                        </div>
-                      )}
-
-                      {/* Actions */}
-                      <div className="career-detail-actions">
-                        <a
-                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Application+%E2%80%94+${encodeURIComponent(job.title)}&body=Dear+Hiring+Team,%0A%0AI+am+writing+to+apply+for+the+position+of+${encodeURIComponent(job.title)}+at+Phyto+Ingredients+Biopharma.%0A%0APlease+find+my+resume+attached.%0A%0ARegards`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="career-btn career-btn-primary"
-                        >
-                          Apply via Email <IconArrow />
-                        </a>
-                        <a
-                          href={`https://wa.me/${whatsapp}?text=Hello, I am interested in the ${job.title} position at Phyto Ingredients Biopharma. I would like to apply.`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="career-btn career-btn-ghost"
-                        >
-                          WhatsApp
-                        </a>
-                      </div>
+                    {/* Actions */}
+                    <div className="career-detail-actions">
+                      <a
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Application+%E2%80%94+${encodeURIComponent(job.title)}&body=Dear+Hiring+Team,%0A%0AI+am+writing+to+apply+for+the+position+of+${encodeURIComponent(job.title)}+at+Phyto+Ingredients+Biopharma.%0A%0APlease+find+my+resume+attached.%0A%0ARegards`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="career-btn career-btn-primary"
+                      >
+                        Apply via Email <IconArrow />
+                      </a>
+                      <a
+                        href={`https://wa.me/${whatsapp}?text=Hello, I am interested in the ${job.title} position at Phyto Ingredients Biopharma. I would like to apply.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="career-btn career-btn-ghost"
+                      >
+                        WhatsApp
+                      </a>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Bottom CTA */}
-        <div className="careers-bottom">
-          <div className="careers-bottom-text">
-            <h3>Not the right role?</h3>
-            <p>
-              Send your resume directly. We review every application<br />
-              and reach out when a suitable position opens.
-            </p>
-          </div>
-          <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Career+Enquiry+%E2%80%94+Phyto+Ingredients`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="careers-bottom-email"
-          >
-            <IconMail />
-            {email}
-          </a>
+              </div>
+            );
+          })}
         </div>
+      </section>
 
+      {/* Bottom CTA */}
+      <div className="careers-bottom">
+        <div className="careers-bottom-text">
+          <h3>Not the right role?</h3>
+          <p>
+            Send your resume directly. We review every application<br />
+            and reach out when a suitable position opens.
+          </p>
+        </div>
+        <a
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Career+Enquiry+%E2%80%94+Phyto+Ingredients`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="careers-bottom-email"
+        >
+          <IconMail />
+          {email}
+        </a>
       </div>
-    );
-  }
+
+    </div>
+  );
 }
 
 export default Careers;

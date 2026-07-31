@@ -1,0 +1,401 @@
+/* ============================================================
+   CERTIFICATIONS PAGE — certifications.css
+   Premium · Luxury · Nature-forward
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── PAGE WRAPPER ── */
+.cert-page {
+    min-height: 100vh;
+    background: #fafaf8;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ══════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════ */
+.cert-hero {
+    position: relative;
+    background: linear-gradient(145deg, #0a1f0a 0%, #1a3a1a 40%, #0f2d1a 100%);
+    padding: 110px 24px 100px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cert-hero__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 60% at 15% 30%, rgba(76, 175, 80, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 85% 70%, rgba(200, 230, 201, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* decorative floating circles */
+.cert-hero__circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+.cert-hero__circle--1 {
+    width: 480px; height: 480px;
+    top: -160px; right: -120px;
+}
+.cert-hero__circle--2 {
+    width: 260px; height: 260px;
+    bottom: -80px; left: -60px;
+}
+
+.cert-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cert-hero__eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #81c784;
+    margin: 0 0 18px;
+}
+
+.cert-hero__title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    letter-spacing: -0.5px;
+}
+
+.cert-hero__divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #81c784, transparent);
+    margin: 0 auto 22px;
+}
+
+.cert-hero__subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* ══════════════════════════════════════════
+   TRUST STRIP
+   ══════════════════════════════════════════ */
+.cert-trust-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    padding: 0 40px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+.cert-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 36px;
+    gap: 4px;
+}
+
+.cert-trust-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a3a1a;
+    line-height: 1;
+}
+
+.cert-trust-label {
+    font-size: 0.7rem;
+    color: #7a9a7a;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.cert-trust-divider {
+    width: 1px;
+    height: 36px;
+    background: #e0e8e0;
+}
+
+/* ══════════════════════════════════════════
+   GRID SECTION
+   ══════════════════════════════════════════ */
+.cert-grid-section {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 72px 24px 80px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* ══════════════════════════════════════════
+   CERT CARD
+   ══════════════════════════════════════════ */
+.cert-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 36px 30px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #eaeeea;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    transition:
+        transform 0.38s cubic-bezier(0.34, 1.36, 0.64, 1),
+        box-shadow 0.38s ease,
+        border-color 0.3s ease;
+    overflow: hidden;
+    cursor: default;
+}
+
+.cert-card:hover,
+.cert-card--hovered {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+    border-color: var(--cert-color, #388e3c);
+}
+
+/* Top color bar */
+.cert-card__topbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--cert-color, #388e3c);
+    border-radius: 18px 18px 0 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cert-card:hover .cert-card__topbar,
+.cert-card--hovered .cert-card__topbar {
+    transform: scaleX(1);
+}
+
+/* Badge */
+.cert-card__badge {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--cert-color, #388e3c);
+    background: var(--cert-accent, rgba(56, 142, 60, 0.08));
+    border: 1px solid var(--cert-color, #388e3c);
+    border-radius: 50px;
+    padding: 4px 12px;
+    margin-bottom: 22px;
+    width: fit-content;
+    opacity: 0.9;
+}
+
+/* Logo */
+.cert-card__logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--cert-accent, rgba(56, 142, 60, 0.06));
+    margin-bottom: 22px;
+    transition: transform 0.35s ease;
+}
+
+.cert-card:hover .cert-card__logo-wrap {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+.cert-card__logo {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+}
+
+/* Body */
+.cert-card__body {
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.cert-card__name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a2e1a;
+    margin: 0 0 6px;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+}
+
+.cert-card__authority {
+    font-size: 0.72rem;
+    color: var(--cert-color, #388e3c);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+}
+
+.cert-card__desc {
+    font-size: 0.875rem;
+    color: #5a6a5a;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* CTA Button */
+.cert-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cert-color, #388e3c);
+    text-decoration: none;
+    border: 1.5px solid var(--cert-color, #388e3c);
+    border-radius: 50px;
+    padding: 10px 22px;
+    width: fit-content;
+    letter-spacing: 0.3px;
+    transition:
+        background 0.28s ease,
+        color 0.28s ease,
+        transform 0.25s ease;
+}
+
+.cert-card__cta:hover {
+    background: var(--cert-color, #388e3c);
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* ══════════════════════════════════════════
+   BOTTOM BANNER
+   ══════════════════════════════════════════ */
+.cert-bottom-banner {
+    background: linear-gradient(135deg, #0a1f0a 0%, #1a3a1a 100%);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-bottom-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(76, 175, 80, 0.07) 0%, transparent 70%);
+}
+
+.cert-bottom-banner__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.cert-bottom-banner__leaf {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    display: block;
+    animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+.cert-bottom-banner__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+.cert-bottom-banner__sub {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.58);
+    line-height: 1.8;
+    margin: 0 0 32px;
+    font-weight: 300;
+}
+
+.cert-bottom-banner__btn {
+    display: inline-block;
+    background: #fff;
+    color: #1a3a1a;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 36px;
+    border-radius: 50px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.28s ease, box-shadow 0.3s ease;
+}
+
+.cert-bottom-banner__btn:hover {
+    background: #81c784;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(129, 199, 132, 0.4);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media (max-width: 960px) {
+    .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-trust-strip {
+        flex-wrap: wrap;
+        padding: 0 16px;
+    }
+
+    .cert-trust-item {
+        flex: 1 1 calc(50% - 1px);
+        padding: 18px 10px;
+    }
+
+    .cert-trust-divider {
+        display: none;
+    }
+
+    .cert-hero {
+        padding: 80px 20px 70px;
+    }
+}
