@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PhytoIngredients — Brochure QR Code</title>
+<meta name="description" content="Scan this QR code to view the PhytoIngredients digital brochure at www.phytoingredients.com/brochure" />
+
+<!-- QRCode library -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark  : #0d2b16;
+    --green-mid   : #1a4d2e;
+    --green-light : #2e7d32;
+    --gold        : #c8922a;
+    --gold-light  : #e0a83a;
+  }
+
+  html, body {
+    min-height: 100vh;
+    background: var(--green-dark);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+  }
+
+  /* ── Ambient glow ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 20%, rgba(46,125,50,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 80%, rgba(200,146,42,0.12) 0%, transparent 70%);
+  }
+
+  /* ── Card ── */
+  .card {
+    position: relative;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    padding: 40px 40px 32px;
+    display: flex; flex-direction: column; align-items: center; gap: 0;
+    backdrop-filter: blur(24px);
+    box-shadow:
+      0 0 0 1px rgba(200,146,42,0.12),
+      0 32px 80px rgba(0,0,0,0.7),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    max-width: 420px; width: 100%;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,146,42,0.6), transparent);
+    border-radius: 50%;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    margin-bottom: 28px;
+  }
+  .logo-wrap {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(46,125,50,0.4), 0 0 0 1px rgba(200,146,42,0.2);
+    margin-bottom: 4px; overflow: hidden;
+  }
+  .logo-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 8px; filter: brightness(0) invert(1); }
+  .logo-wrap .leaf-icon {
+    font-size: 28px; line-height: 1;
+  }
+  .brand-name {
+    font-size: 18px; font-weight: 800; color: #fff;
+    letter-spacing: 0.2px; text-align: center;
+  }
+  .brand-tagline {
+    font-size: 11px; font-weight: 500;
+    color: rgba(255,255,255,0.4); letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  /* ── QR wrapper ── */
+  .qr-wrapper {
+    position: relative;
+    padding: 16px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow:
+      0 0 0 1px rgba(200,146,42,0.3),
+      0 8px 40px rgba(0,0,0,0.5),
+      0 0 60px rgba(46,125,50,0.15);
+    margin-bottom: 20px;
+  }
+  /* Corner accents */
+  .qr-wrapper::before, .qr-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    border-color: var(--gold);
+    border-style: solid;
+  }
+  .qr-wrapper::before {
+    top: -4px; left: -4px;
+    border-width: 3px 0 0 3px;
+    border-radius: 6px 0 0 0;
+  }
+  .qr-wrapper::after {
+    bottom: -4px; right: -4px;
+    border-width: 0 3px 3px 0;
+    border-radius: 0 0 6px 0;
+  }
+
+  #qrcode canvas, #qrcode img {
+    display: block;
+    border-radius: 6px;
+  }
+
+  /* ── Center logo overlay ── */
+  .qr-center-logo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .qr-center-logo img {
+    width: 44px; height: 44px; object-fit: contain; border-radius: 0;
+    padding: 2px;
+  }
+  .qr-center-logo .leaf-fallback {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-mid), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+
+  /* ── URL strip ── */
+  .url-strip {
+    width: calc(100% + 80px);
+    margin: 0 -40px -32px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, var(--green-mid) 0%, #1e5c34 50%, rgba(200,146,42,0.25) 100%);
+    border-radius: 0 0 27px 27px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .url-text {
+    font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9);
+    letter-spacing: 0.5px;
+  }
+  .url-icon { margin-right: 6px; opacity: 0.7; }
+
+  /* ── Instruction ── */
+  .instruction {
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.3px; text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* ── Buttons ── */
+  .actions {
+    display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: flex; align-items: center; gap: 7px;
+    height: 40px; padding: 0 20px; border-radius: 10px;
+    border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.3px; transition: all 0.2s ease; text-decoration: none;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--green-dark);
+    box-shadow: 0 2px 16px rgba(200,146,42,0.4);
+  }
+  .btn-gold:hover {
+    box-shadow: 0 4px 24px rgba(200,146,42,0.65);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.8);
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* ── Scan animation ── */
+  @keyframes scan {
+    0%   { top: 16px; opacity: 1; }
+    90%  { opacity: 1; }
+    100% { top: calc(100% - 20px); opacity: 0; }
+  }
+  .scan-line {
+    position: absolute; left: 16px; right: 16px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    border-radius: 1px;
+    animation: scan 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* ── Footer note ── */
+  .footer-note {
+    margin-top: 28px;
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    text-align: center; letter-spacing: 0.3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card" id="qr-card">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-wrap">
+      <img src="/images/phyto-logo.png" alt="PhytoIngredients" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <span class="leaf-icon" style="display:none;">🌿</span>
+    </div>
+    <div class="brand-name">PhytoIngredients</div>
+    <div class="brand-tagline">Biopharma · Natural Health Care</div>
+  </div>
+
+  <!-- QR Code -->
+  <div class="qr-wrapper" id="qr-outer">
+    <div id="qrcode"></div>
+    <!-- Scan animation -->
+    <div class="scan-line"></div>
+    <!-- Center logo -->
+    <div class="qr-center-logo">
+      <img src="/images/phyto-logo.png" alt="PhytoIngredients"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="leaf-fallback" style="display:none;">🌿</div>
+    </div>
+    <!-- Extra corner accents (bottom-left, top-right) -->
+    <span style="position:absolute;top:-4px;right:-4px;width:20px;height:20px;border:3px solid #c8922a;border-width:3px 3px 0 0;border-radius:0 6px 0 0;"></span>
+    <span style="position:absolute;bottom:-4px;left:-4px;width:20px;height:20px;border:3px solid #c8922a;border-width:0 0 3px 3px;border-radius:0 0 0 6px;"></span>
+  </div>
+
+  <!-- Instruction -->
+  <div class="instruction">Scan to view our digital brochure</div>
+
+  <!-- URL strip -->
+  <div class="url-strip">
+    <span class="url-text"><span class="url-icon">🌐</span>www.phytoingredients.com/brochure</span>
+  </div>
+
+</div>
+
+<!-- Action buttons (outside card so they don't appear in download) -->
+<div class="actions">
+  <button class="btn btn-gold" onclick="downloadQR()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Download QR
+  </button>
+  <button class="btn btn-ghost" onclick="copyURL()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+    </svg>
+    Copy Link
+  </button>
+</div>
+
+<p class="footer-note">phytoingredients.com/brochure · Digital Brochure</p>
+
+<script>
+  const TARGET_URL = 'https://www.phytoingredients.com/brochure'
+  const QR_SIZE    = 260   // px
+  const GREEN_DARK = '#1a4d2e'
+  const GREEN_MID  = '#2e7d32'
+  const GOLD       = '#c8922a'
+
+  /* Generate QR with two-tone green-to-gold effect */
+  const qr = new QRCode(document.getElementById('qrcode'), {
+    text        : TARGET_URL,
+    width       : QR_SIZE,
+    height      : QR_SIZE,
+    colorDark   : GREEN_DARK,
+    colorLight  : '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H   // H = 30% error correction, needed for centre logo
+  })
+
+  /* Tint the QR canvas with a gradient after generation */
+  setTimeout(() => {
+    const canvas = document.querySelector('#qrcode canvas')
+    if (!canvas) return
+
+    const ctx  = canvas.getContext('2d')
+    const orig = document.createElement('canvas')
+    orig.width  = canvas.width
+    orig.height = canvas.height
+    orig.getContext('2d').drawImage(canvas, 0, 0)
+
+    // Create gradient overlay
+    const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+    grad.addColorStop(0,    '#1a4d2e')
+    grad.addColorStop(0.45, '#2e7d32')
+    grad.addColorStop(1,    '#c8922a')
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(orig, 0, 0)
+
+    ctx.globalCompositeOperation = 'source-in'
+    ctx.fillStyle = grad
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.globalCompositeOperation = 'source-over'
+
+    // Re-draw white modules
+    const origCtx  = orig.getContext('2d')
+    const imgData  = origCtx.getImageData(0, 0, orig.width, orig.height)
+    const data     = imgData.data
+    ctx2 = document.createElement('canvas').getContext('2d')
+
+    for (let i = 0; i < data.length; i += 4) {
+      if (data[i] > 200 && data[i+1] > 200 && data[i+2] > 200) {
+        const x = (i / 4) % orig.width
+        const y = Math.floor((i / 4) / orig.width)
+        ctx.clearRect(x, y, 1, 1)
+        ctx.fillStyle = '#ffffff'
+        ctx.globalCompositeOperation = 'source-over'
+        ctx.fillRect(x, y, 1, 1)
+      }
+    }
+  }, 200)
+
+  /* ── Download as PNG ── */
+  function downloadQR() {
+    const canvas = document.querySelector('#qrcode canvas')
+    if (!canvas) { alert('QR not ready yet'); return }
+
+    // Draw a nice framed version
+    const out   = document.createElement('canvas')
+    const pad   = 40
+    const strip = 56
+    out.width   = canvas.width  + pad * 2
+    out.height  = canvas.height + pad * 2 + strip
+    const ctx   = out.getContext('2d')
+
+    // Background
+    ctx.fillStyle = '#fff'
+    ctx.fillRect(0, 0, out.width, out.height)
+
+    // QR
+    ctx.drawImage(canvas, pad, pad)
+
+    // Bottom strip
+    const grd = ctx.createLinearGradient(0, canvas.height + pad * 2, out.width, out.height)
+    grd.addColorStop(0, '#1a4d2e')
+    grd.addColorStop(1, '#2e7d32')
+    ctx.fillStyle = grd
+    ctx.fillRect(0, canvas.height + pad * 2, out.width, strip)
+
+    ctx.fillStyle   = '#fff'
+    ctx.font        = 'bold 15px Inter, sans-serif'
+    ctx.textAlign   = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText('www.phytoingredients.com/brochure', out.width / 2, canvas.height + pad * 2 + strip / 2)
+
+    const link    = document.createElement('a')
+    link.download = 'PhytoIngredients-Brochure-QR.png'
+    link.href     = out.toDataURL('image/png')
+    link.click()
+  }
+
+  /* ── Copy URL ── */
+  async function copyURL() {
+    try {
+      await navigator.clipboard.writeText(TARGET_URL)
+      const btn = document.querySelectorAll('.btn-ghost')[0]
+      const orig = btn.innerHTML
+      btn.innerHTML = '✓ Copied!'
+      btn.style.background = 'rgba(46,125,50,0.25)'
+      btn.style.borderColor = 'rgba(46,125,50,0.5)'
+      setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.borderColor = ''; }, 2000)
+    } catch { alert(TARGET_URL) }
+  }
+</script>
+</body>
+</html>

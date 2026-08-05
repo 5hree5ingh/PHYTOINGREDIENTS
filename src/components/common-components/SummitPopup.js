@@ -17,7 +17,7 @@ const summits = [
     tagline: 'In Collaboration with Spices Board India',
     location: 'India Expo Centre & Mart (IEML), Greater Noida',
     date: 'August 6 – 8, 2026',
-    booth: 'Stall Details Coming Soon',
+    booth: 'Stall No. B4-2',
     image: '/images/greater-noida-expo.png',
   },
 ];

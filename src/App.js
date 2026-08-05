@@ -26,9 +26,10 @@ import SummitPopup from './components/common-components/SummitPopup';
 import Careers from './components/common-components/careers';
 import Certifications from './components/common-components/certifications';
 import Brochure from './components/common-components/Brochure';
+import BrochureQR from './components/common-components/BrochureQR';
 
 /* Routes that render without the global header / footer */
-const FULLSCREEN_ROUTES = ['/brochure'];
+const FULLSCREEN_ROUTES = ['/brochure', '/brochure-qr'];
 
 function AppLayout() {
   const { pathname } = useLocation();
@@ -61,6 +62,7 @@ function AppLayout() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/brochure" element={<Brochure />} />
+        <Route path="/brochure-qr" element={<BrochureQR />} />
       </Routes>
       {!isFullscreen && <Footer />}
     </div>
