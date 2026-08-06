@@ -437,7 +437,7 @@ export default function Brochure() {
                             <div className="toolbar-divider" style={{ margin: '0 4px' }} />
                         </div>
 
-                        <a href="/PhytoIngredients_Brochure.pdf" download="PhytoIngredients_Brochure.pdf" style={{ textDecoration: 'none' }}>
+                        <a href="/images/PHYTO INGREDIENTS_BROCHURE.pdf" download="PhytoIngredients_Brochure.pdf" style={{ textDecoration: 'none' }}>
                             <button className="download-btn">
                                 <IconDownload />
                                 <span className="download-btn-text">Download PDF</span>
